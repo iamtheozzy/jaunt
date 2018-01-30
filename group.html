@@ -108,6 +108,7 @@
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery.js"></script>
+
 	<script> 
 	function getParameterByName(name, url) {
 	    if (!url) url = window.location.href;
@@ -125,6 +126,7 @@
 	    }
 	});
 	var accessToken = "";
+	
 	$.ajax({
         url: "https://accounts.spotify.com/api/token",
 		headers: {
@@ -134,7 +136,7 @@
 		data: {
 	      "grant_type":    "authorization_code",
 	      "code":          getParameterByName("code"),
-	      "redirect_uri":  "http://localhost:8080/group.html"
+	      "redirect_uri":  "https://iamtheozzy.github.io/jaunt/group.html"
 	    },
       }).then(function(response) {
 	      console.log(response);
