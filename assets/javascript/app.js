@@ -36,11 +36,14 @@ $(function() {
    **/
 
   // AJAX CALL
+
   // creating variables of user inputs
-  // var city = $("#city-input").val().trim();
-  // var cuisineChoise = $("#cuisine-input").val().trim();
-  var city = "Chicago";
-  var cuisineChoise = "mexican";
+  var city = $("#city-input").val().trim().toLowerCase();
+  var cuisineChoise = $("#cuisine-input").val().trim().toLowerCase();
+  // use variables below when testing api functionality
+  // var city = "Chicago";
+  // var cuisineChoise = "mexican";
+
   var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&location="+ city + "&categories=" + cuisineChoise;
 
   $.ajax({
@@ -52,20 +55,27 @@ $(function() {
         "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
     },
     success: function(response) {
+      // returns 5 restaurants to the Food Card in index.html
       for (var i = 0; i < 5; i++) {
         var obj = response.businesses[i];
-        console.log(obj);
-        var div = $("<div>");
+        // console.log(obj); //returns restaurant object
 
+        // Creates clickable image that opens in yelp
         var restImg = obj.image_url; //stores business image link.
         var img = $("<img>").attr("src", restImg).attr("class", "rest-img"); //creates image tag and adds image url and class for styling.
-        var imgLink = $("<br><a href=" + obj.url +"></a><br>")
-        imgLink.append(img)
-        // img.attr("src", restImg);
-        // img.attr("class", "rest-img");
+        var imgLink = $("<br><a href=" + obj.url +"></a><br>") //creates link that directs to restaurant yelp page
 
+        //adds restaurant name and adds it to link
+        var restName = $("<h5>");
+        restName.text(obj.name);
 
+        // This adds restaurant header, image and link to page
+        imgLink.append(restName);
+        imgLink.append(img);
+
+        // $("#food-card-expanded").append(p);
         $("#food-card-expanded").append(imgLink);
+
 
       }
     },
