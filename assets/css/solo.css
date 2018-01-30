@@ -52,6 +52,11 @@ p, label {
 	color: white;
 }
 
+/* Turns of text decorations when hovering over the cards to click ============*/
+a:hover   {
+  	text-decoration:  none;
+  	}
+
 /* Styling for the cards */
 
 /* Food Card =================================================================*/
@@ -80,7 +85,7 @@ p, label {
 }
 
 /* This is the submit button */
-#food-button {
+#food-button, #reset-button {
 	background-color: #F3E5F5;
 	color: #9C27B0;
 	font-family: 'Alegreya Sans SC', sans-serif;
@@ -191,5 +196,5 @@ p, label {
 }
 
 .rest-img {
-	width: 100%;
+	width: 50%;
 }

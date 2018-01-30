@@ -45,6 +45,11 @@ p {
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
 
+/* Turns of text decorations when hovering over the cards to click ============*/
+a:hover   {
+  	text-decoration:  none;
+  	}
+
 
 /* Text below the h1 in the jumbotron ==========================================*/
 .lead {
