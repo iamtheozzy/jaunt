@@ -79,7 +79,7 @@ $(function() {
         imgLink.append(restName);
         imgLink.append(img);
 
-        $("#food-results").prepend(imgLink);
+        $("#food-results").append(imgLink);
         clearFoodCard();
       }
     },
