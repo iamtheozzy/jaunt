@@ -15,9 +15,15 @@
 /**
 *! NOTE: Errors expected at 15/51/59  due to commented out code--Please double check errors are resolved after removing comments
 **/
-
+function clearFoodCard() {
+  // empties text box from user inputs
+  $("#city-input").empty();
+  $("#cuisine-input").empty();
+};
 // DOCUMENT READY
 $(function() {
+
+
 
   $("#food-button").on("click", function () {
   event.preventDefault();
@@ -63,7 +69,7 @@ $(function() {
         // Creates clickable image that opens in yelp
         var restImg = obj.image_url; //stores business image link.
         var img = $("<img>").attr("src", restImg).attr("class", "rest-img"); //creates image tag and adds image url and class for styling.
-        var imgLink = $("<br><a href=" + obj.url +"></a><br>") //creates link that directs to restaurant yelp page
+        var imgLink = $("<br><a href=" + obj.url +"></a><br>").attr("target","_blank") //creates link that directs to restaurant yelp page
 
         //adds restaurant name and adds it to link
         var restName = $("<h5>");
@@ -73,15 +79,19 @@ $(function() {
         imgLink.append(restName);
         imgLink.append(img);
 
-        // $("#food-card-expanded").append(p);
-        $("#food-card-expanded").append(imgLink);
-
-
+        $("#food-results").prepend(imgLink);
+        clearFoodCard();
       }
     },
 
     })
   })
+
+  $("#reset-button").on("click", function () {
+    $("#food-results").empty();
+  });
+
+
 })
 
 //==================================================================================================
