@@ -1,7 +1,7 @@
 /**
-* !                                                                                                               
+* !
 *! NOTE: Errors expected due to commented out code--Please double check errors are resolved after removing comments
-*!                                                                                                                 
+*!
 **/
 //=====================================
 //
@@ -12,51 +12,66 @@
 //     ##     #####  ######  ##
 //
 //=====================================
-
-// ! DOCUMENT READY
-$(function () {
-
-//      $("#search_button").on("click", function () {
-        var accessToken = "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
-        var city = $(/*"#USER-INPUT"*/).val(); // <- The city variable will hold the results we get from the user's inputs via HTML
-        var queryURL = "https://api.yelp.com/v3/businesses/search?&location=" + "chicago";
-
 /**
- * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
- **/
+*! NOTE: Errors expected at 15/51/59  due to commented out code--Please double check errors are resolved after removing comments
+**/
 
-jQuery.ajaxPrefilter(function (options) {
+// DOCUMENT READY
+$(function() {
+
+  $("#food-button").on("click", function () {
+  event.preventDefault();
+  /**
+   * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
+   **/
+
+  jQuery.ajaxPrefilter(function(options) {
     if (options.crossDomain && jQuery.support.cors) {
-        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
     }
-});
+  });
 
-/**
- * ! AJAX PREFILTER  DO NOT CHANGE ------------------------------------------^
- **/
+  /**
+   * ! AJAX PREFILTER  DO NOT CHANGE ------------------------------------------^
+   **/
 
-// AJAX CALL
-$.ajax({
+  // AJAX CALL
+  // creating variables of user inputs
+  // var city = $("#city-input").val().trim();
+  // var cuisineChoise = $("#cuisine-input").val().trim();
+  var city = "Chicago";
+  var cuisineChoise = "mexican";
+  var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&location="+ city + "&categories=" + cuisineChoise;
+
+  $.ajax({
     type: "GET",
-    url: "https://api.yelp.com/v3/businesses/search?&location=" + "Chicago",
+    url: queryURL,
     dataType: "json",
     headers: {
-        "Authorization": "Bearer " +
-            "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
+      "Authorization": "Bearer " +
+        "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
     },
-    success: function (response) {
-        for (var i = 0; i < 5; i++) {
-            var obj = response.businesses[i];
-            console.log(obj.name);
-            var div = $("<div>");
-            div.html(obj.name);
+    success: function(response) {
+      for (var i = 0; i < 5; i++) {
+        var obj = response.businesses[i];
+        console.log(obj);
+        var div = $("<div>");
 
-        $("#food-card-expanded").append(div); //! << CHANGE (#STORE DATA) TO MATCH HTML ID
+        var restImg = obj.image_url; //stores business image link.
+        var img = $("<img>").attr("src", restImg).attr("class", "rest-img"); //creates image tag and adds image url and class for styling.
+        var imgLink = $("<br><a href=" + obj.url +"></a><br>")
+        imgLink.append(img)
+        // img.attr("src", restImg);
+        // img.attr("class", "rest-img");
 
-        }
+
+        $("#food-card-expanded").append(imgLink);
+
+      }
     },
 
-})
+    })
+  })
 })
 
 //==================================================================================================
@@ -70,7 +85,7 @@ $.ajax({
 //==================================================================================================
 $(function () {
 // $("#SEARCH BUTTON").on("click", function () {
-  // var city = $("#userInput").val(); // ! << UNCOMMENT, GENERATE INPUT BOX & #ID AND MATCH TO $("#userInput") 
+  // var city = $("#userInput").val(); // ! << UNCOMMENT, GENERATE INPUT BOX & #ID AND MATCH TO $("#userInput")
  //  var city = "Chicago" // ! << UNCOMMENT TO HARDCODE
     var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=music&city=";
  //  getQuote(); // ! << CALL getQuote FUNCTION
@@ -90,20 +105,20 @@ $(function () {
                          $("#well-section").append(div);
                 var artistName = $("<h1>").text(obj.name);
                 var artistURL = $("<a>").attr("href", obj.url).append(artistName);
-               // $("#url-displayed-in-an-<h1>-tag").append(artistURL); // ! << UNCOMMENT & GENERATE/MATCH #ID 
+               // $("#url-displayed-in-an-<h1>-tag").append(artistURL); // ! << UNCOMMENT & GENERATE/MATCH #ID
 
 // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
             }
         })
     }
 //===========================================================
-//                                                           
-//  ##        ###     ####  ######      #####  ###    ###  
-//  ##       ## ##   ##       ##        ##     ## #  # ##  
-//  ##      ##   ##   ###     ##        #####  ##  ##  ##  
-//  ##      #######     ##    ##        ##     ##      ##  
-//  ######  ##   ##  ####     ##    ##  ##     ##      ##  
-//                                                           
+//
+//  ##        ###     ####  ######      #####  ###    ###
+//  ##       ## ##   ##       ##        ##     ## #  # ##
+//  ##      ##   ##   ###     ##        #####  ##  ##  ##
+//  ##      #######     ##    ##        ##     ##      ##
+//  ######  ##   ##  ####     ##    ##  ##     ##      ##
+//
 //===========================================================
 
 $(function () {
@@ -121,7 +136,7 @@ $(function () {
                     var div = $("<div>");
                     div.html(obj.name);
                     $("#well-section").append(div);
-                    // ! Added url =========================== 
+                    // ! Added url ===========================
                     var artistName = $("<h4>").text(obj.name);
                     var artistURL = $("<a>").attr("href", obj.url).append(artistName);
                     $("#well-section").append(artistURL); // ! << UNCOMMENT & GENERATE/MATCH  #ID
@@ -131,13 +146,13 @@ $(function () {
         }
 })
 //================================================================================
-//                                                                                
-//   ####    #####      ###     ####  #####  ##     ##   #####   ######  #####  
-//  ##       ##  ##    ## ##   ##     ##     ####   ##  ##   ##    ##    ##     
-//  ##  ###  #####    ##   ##  ##     #####  ##  ## ##  ##   ##    ##    #####  
-//  ##   ##  ##  ##   #######  ##     ##     ##    ###  ##   ##    ##    ##     
-//   ####    ##   ##  ##   ##   ####  #####  ##     ##   #####     ##    #####  
-//                                                                                
+//
+//   ####    #####      ###     ####  #####  ##     ##   #####   ######  #####
+//  ##       ##  ##    ## ##   ##     ##     ####   ##  ##   ##    ##    ##
+//  ##  ###  #####    ##   ##  ##     #####  ##  ## ##  ##   ##    ##    #####
+//  ##   ##  ##  ##   #######  ##     ##     ##    ###  ##   ##    ##    ##
+//   ####    ##   ##  ##   ##   ####  #####  ##     ##   #####     ##    #####
+//
 //================================================================================
 
     $(function () {
@@ -158,7 +173,7 @@ $(function () {
                         div.html(obj.program.title);
                         $("#well-section").append(div);
 
-                        // ! Added url =========================== 
+                        // ! Added url ===========================
                         var genre = $("<h6>").text(obj.program.genres);
                         var programDetails = $("<h6>").text(obj.program.longDescription);
                 //      $("#well-section").append(genre); // ! << UNCOMMENT & GENERATE/MATCH  #ID
@@ -168,5 +183,4 @@ $(function () {
                 })
             }
         })
-    })
-})
+    });
