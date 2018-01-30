@@ -41,7 +41,7 @@ h5 {
 }
 
 /* Font in the cards ============================================================*/
-p {
+p, label {
 	color: white;
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
@@ -68,6 +68,25 @@ p {
 #food-card-expanded {
 	background-color: #673AB7;
 	border: 0px;
+}
+
+/* This is the city and cuisine input boxes */
+#cuisine-input, #city-input {
+	width: 100%;
+	border-radius: 5px;
+	border-width: 2px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	margin-bottom: 5px;
+}
+
+/* This is the submit button */
+#food-button {
+	background-color: #F3E5F5;
+	color: #9C27B0;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: white;
 }
 
 /* Movie Card ===============================================================*/
@@ -107,7 +126,6 @@ p {
 	background-color: #E91E63;
 	color: black;
 	border: 0px;
-	float: right;
 }
 
 /* This is the category input box */

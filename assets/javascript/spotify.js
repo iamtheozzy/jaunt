@@ -1,14 +1,10 @@
-
-/* var accessToken = 'BQB565o4S6aKgNZYh9DzBZU3bQdHXucwhyXnSb-S_RUVUwDx1wKC7u3-HeBYbFhQ0sYw1kX193_Rwo8x-Z5beAy5Q5B8XayZH6vGSdLSBjiIKpGKS7Hmyxu-tDivPQumi3sCPiwifksJ5y4JUSIr6HF6KosMc3_2lC9e'; */
-
-
-    // Event listener for our cat-button
+// Event listener for the create button
     $('#add-category').on('click', function() {
 
       var category = $('#category').val().trim();
       console.log(category);
       $('.loader').toggleClass('show');
-
+      $('#category').empty();
       // Storing our giphy API URL for a random cat image
       var queryURL = 'https://api.spotify.com/v1/browse/categories/' + category + '/playlists';
       console.log(queryURL);
@@ -43,7 +39,6 @@
 		$('.loader').toggleClass('show');
 
 		$('.playlist').html(`<iframe src="${baseUrl}" width="300" height="350" frameborder="0" allowtransparency="true"></iframe>`);
-
 
   })
 
