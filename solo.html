@@ -102,6 +102,41 @@
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery.js"></script>
 
+	<script> 
+	function getParameterByName(name, url) {
+	    if (!url) url = window.location.href;
+	    name = name.replace(/[\[\]]/g, "\\$&");
+	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+	        results = regex.exec(url);
+	    if (!results) return null;
+	    if (!results[2]) return '';
+	    return decodeURIComponent(results[2].replace(/\+/g, " "));
+	}
+
+	jQuery.ajaxPrefilter(function (options) {
+	    if (options.crossDomain && jQuery.support.cors) {
+	        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+	    }
+	});
+	var accessToken = "";
+	
+	$.ajax({
+        url: "https://accounts.spotify.com/api/token",
+		headers: {
+		     'Authorization': 'Basic ' + btoa("1542d1f69f99495eba4fbc6ca5574eb2:cb77e7a06c034adeb0c8b90d571680d0")
+		 },
+		method: 'POST',
+		data: {
+	      "grant_type":    "authorization_code",
+	      "code":          getParameterByName("code"),
+	      "redirect_uri":  "https://iamtheozzy.github.io/jaunt/solo.html"
+	    },
+      }).then(function(response) {
+	      console.log(response);
+	      accessToken = response.access_token
+      }); 
+  	</script>
+  	
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
