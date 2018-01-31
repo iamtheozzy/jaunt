@@ -73,7 +73,6 @@ a:hover   {
 #food-card-expanded {
 	background-color: #673AB7;
 	border: 0px;
-	float: right;
 }
 
 /* This is the city and cuisine input boxes */
@@ -111,7 +110,6 @@ a:hover   {
 #concert-card-expanded {
 	background-color: #03A9F4;
 	border: 0px;
-	float: left;
 }
 
 /* Music Card ===============================================================*/
