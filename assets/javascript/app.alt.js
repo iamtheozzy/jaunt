@@ -1,15 +1,15 @@
 //==============================================================
-//                                                              
-//   ####   #####   ##     ##   ####  #####  #####    ######  
-//  ##     ##   ##  ####   ##  ##     ##     ##  ##     ##    
-//  ##     ##   ##  ##  ## ##  ##     #####  #####      ##    
-//  ##     ##   ##  ##    ###  ##     ##     ##  ##     ##    
-//   ####   #####   ##     ##   ####  #####  ##   ##    ##    
-//                                                              
+//
+//   ####   #####   ##     ##   ####  #####  #####    ######
+//  ##     ##   ##  ####   ##  ##     ##     ##  ##     ##
+//  ##     ##   ##  ##  ## ##  ##     #####  #####      ##
+//  ##     ##   ##  ##    ###  ##     ##     ##  ##     ##
+//   ####   #####   ##     ##   ####  #####  ##   ##    ##
+//
 //==============================================================
 
 $(function () {
-            $("#SEARCH BUTTON").on("click", function () {
+            $("").on("click", function () {
                         var city = $("#userInput").val(); // ! << UNCOMMENT, GENERATE INPUT BOX & #ID AND MATCH TO $("#userInput")
                         //  var city = "Chicago" // ! << UNCOMMENT TO HARDCODE
                         var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=music&city=";
@@ -38,27 +38,77 @@ $(function () {
                         }
                     })
 //=======================================================================================
-//                                                                                       
-//  ##    ##  #####  ##      #####          ####    #####     #####   ##   ##  #####   
-//   ##  ##   ##     ##      ##  ##        ##       ##  ##   ##   ##  ##   ##  ##  ##  
-//    ####    #####  ##      #####         ##  ###  #####    ##   ##  ##   ##  #####   
-//     ##     ##     ##      ##            ##   ##  ##  ##   ##   ##  ##   ##  ##      
-//     ##     #####  ######  ##             ####    ##   ##   #####    #####   ##      
-//                                                                                       
+//
+//  ##    ##  #####  ##      #####          ####    #####     #####   ##   ##  #####
+//   ##  ##   ##     ##      ##  ##        ##       ##  ##   ##   ##  ##   ##  ##  ##
+//    ####    #####  ##      #####         ##  ###  #####    ##   ##  ##   ##  #####
+//     ##     ##     ##      ##            ##   ##  ##  ##   ##   ##  ##   ##  ##
+//     ##     #####  ######  ##             ####    ##   ##   #####    #####   ##
+//
 //=======================================================================================
-      
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-          
-                    
+
+//Yelp Search button click binding
+$("#food-button").on("click", function () {
+event.preventDefault();
+/**
+ * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
+ **/
+
+jQuery.ajaxPrefilter(function(options) {
+  if (options.crossDomain && jQuery.support.cors) {
+    options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+  }
+});
+
+/**
+ * ! AJAX PREFILTER  DO NOT CHANGE ------------------------------------------^
+ **/
+
+// AJAX CALL
+
+// creating variables of user inputs
+var city = $("#city-input").val().trim().toLowerCase();
+var cuisineChoise = $("#cuisine-input").val().trim().toLowerCase();
+// use variables below when testing api functionality
+// var city = "Chicago";
+// var cuisineChoise = "mexican";
+
+var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&location="+ city + "&categories=" + cuisineChoise;
+
+$.ajax({
+  type: "GET",
+  url: queryURL,
+  dataType: "json",
+  headers: {
+    "Authorization": "Bearer " +
+      "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
+  },
+  success: function(response) {
+    // returns 5 restaurants to the Food Card in index.html
+    for (var i = 0; i < 5; i++) {
+      var obj = response.businesses[i];
+      // console.log(obj); //returns restaurant object
+
+      // Creates clickable image that opens in yelp
+      var restImg = obj.image_url; //stores business image link.
+      var img = $("<img>").attr("src", restImg).attr("class", "rest-img"); //creates image tag and adds image url and class for styling.
+      var imgLink = $("<br><a href=" + obj.url +"></a><br>").attr("target","_blank") //creates link that directs to restaurant yelp page
+
+      //adds restaurant name and adds it to link
+      var restName = $("<h5>");
+      restName.text(obj.name);
+
+      // This adds restaurant header, image and link to page
+      imgLink.append(restName);
+      imgLink.append(img);
+
+      $("#food-results").append(imgLink);
+      clearFoodCard();
+    }
+  },
+
+  })
+})
 
 
 
@@ -69,4 +119,16 @@ $(function () {
 
 
 
-                })
+
+
+
+
+
+
+
+
+
+
+
+
+})
