@@ -60,7 +60,7 @@ a:hover   {
 
 /* Solo Card =================================================================*/
 #solo-card {
-	background: url('https://media.tenor.co/images/651ddab92a72ca29c9dd075f641f87cc/raw');
+	background: url('https://github.com/iamtheozzy/jaunt/blob/master/assets/images/solo.gif?raw=true');
 	background-size: 150%;
 	background-color: black;
 	color: white;
@@ -71,7 +71,7 @@ a:hover   {
 
 /* Group Card =================================================================*/
 #group-card {
-	background: url('https://cdn.aarp.net/content/dam/aarp/politics/events-and-history/2017/04/1140-disco-ball-rotate.imgcache.rev68f70fc201b260af09472cba064e652d.gif')top;
+	background: url('https://github.com/iamtheozzy/jaunt/blob/master/assets/images/group.gif?raw=true')top;
 	background-color: black;
 	text-align: right;
 	color: white;

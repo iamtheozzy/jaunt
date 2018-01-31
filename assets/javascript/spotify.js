@@ -1,10 +1,10 @@
 // Event listener for the create button
-    $('#add-category').on('click', function() {
+    $('#music-button').on('click', function() {
 
-      var category = $('#category').val().trim();
+      var category = $('#music-input').val().trim();
       console.log(category);
       $('.loader').toggleClass('show');
-      $('#category').empty();
+
       // Storing our giphy API URL for a random cat image
       var queryURL = 'https://api.spotify.com/v1/browse/categories/' + category + '/playlists';
       console.log(queryURL);

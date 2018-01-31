@@ -133,8 +133,8 @@ a:hover   {
 }
 
 /* This is the category input box */
-#category {
-	width: 100%;
+#music-input {
+	width: 40%;
 	border-radius: 5px;
 	border-width: 2px;
 	font-family: 'Alegreya Sans SC', sans-serif;
@@ -142,18 +142,13 @@ a:hover   {
 }
 
 /* This is the create button */
-#add-category {
+#music-button {
 	background-color: #FCE4EC;
 	color: #E91E63;
 	font-family: 'Alegreya Sans SC', sans-serif;
 	border-width: 2px;
 	border-radius: 5px;
 	border-color: white;
-}
-
-/* Adds a shadow to the button on hover */
-#add-category:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* Removing padding from rows and columns ======================================*/
