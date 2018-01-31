@@ -41,7 +41,7 @@ h5 {
 }
 
 /* Font in the cards ============================================================*/
-p {
+p, label {
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
 
@@ -85,7 +85,7 @@ a:hover   {
 }
 
 /* This is the submit button */
-#food-button {
+#bar-button, #barReset-button {
 	background-color: #F3E5F5;
 	color: #9C27B0;
 	font-family: 'Alegreya Sans SC', sans-serif;
@@ -110,6 +110,25 @@ a:hover   {
 #concert-card-expanded {
 	background-color: #03A9F4;
 	border: 0px;
+}
+
+/* This is the location input box */
+#location-input {
+	width: 100%;
+	border-radius: 5px;
+	border-width: 2px;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	margin-bottom: 5px;
+}
+
+/* This is the submit and reset buttons */
+#concert-button, #reset-button{
+	background-color: #E3F2FD;
+	color: #2196F3;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	border-width: 2px;
+	border-radius: 5px;
+	border-color: white;
 }
 
 /* Music Card ===============================================================*/

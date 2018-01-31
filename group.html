@@ -37,70 +37,6 @@
 	<!-- Jumbotron (End) -->
 
 
-<<<<<<< HEAD
-      <!-- Food Input Row -->
-	  <div class="row">
-
-	  	<!-- Food Card-->
-	    <div class="col">
-		  <div class="card" id="food-card">
-            <div class="card-body">
-            <h5 class="food-card-title" data-toggle="collapse" href="#food-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Hungry?</h5>
-            <p>Let's get some food.</p>
-              <div class="collapse" id="food-expand-content">
-			    <div class="card card-body" id="food-card-expanded">INSERT API STUFF HERE
-			    </div>
-	          </div>
-            </div>
-		  </div>
-	    </div>
-
-	  </div>
-	  <!-- Food Input Row (End) -->
-
-      <!-- Concert Input Row -->
-	  <div class="row">
-
-	  	<!-- Concert Card-->
-	    <div class="col">
-		  <div class="card" id="concert-card">
-            <div class="card-body">
-            <h5 class="concert-card-title" data-toggle="collapse" href="#concert-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Let's check out a concert.</h5>
-            <p>Is your favorite group playing? Let's find out.</p>
-              <div class="collapse" id="concert-expand-content">
-			    <div class="card card-body" id="concert-card-expanded">INSERT API STUFF HERE
-			    </div>
-	          </div>
-            </div>
-		  </div>
-	    </div>
-
-	  </div>
-	  <!-- Concert Input Row (End) -->
-
-      <!-- Music Input Row -->
-	  <div class="row">
-
-	  	<!-- Music Card-->
-	    <div class="col">
-		  <div class="card" id="music-card">
-            <div class="card-body">
-            <h5 class="music-card-title" data-toggle="collapse" href="#music-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Ain't no party like a dance party!</h5>
-            <p>Let's get some music playing (we won't judge).</p>
-              <div class="collapse" id="music-expand-content">
-			    <div class="card card-body" id="music-card-expanded">
-				  <div class="playlist">
-				    <div class="loader">
-				      <div class="inner-circle"></div>
-				    </div>
-			      </div>
-					<div class="form">
-						<form>
-				    		<input type="text" class="form-control" id="music-input" placeholder="Pop, Party, Chill, etc.">
-						    <p>Give us a category and we'll give you a playlist.</p>
-				            <button type="submit" class="btn btn-primary" id="music-button">Submit</button>
-						</form>
-=======
 	<!-- Food Input Row -->
 	<div class="row">
 
@@ -188,13 +124,12 @@
 							</div>
 							<div class="form">
 								<form action="">
-									<input type="search" value="" id="category" placeholder="pop, party, chill, etc.">
+									<input type="text" class="form-control" id="music-input" placeholder="Pop, Party, Chill, etc.">
 									<p>Give us a category and we'll give you a playlist.</p>
-									<input id="add-category" type="button" value="Create">
+									<button type="submit" class="btn btn-primary" id="music-button">Submit</button>
 								</form>
 							</div>
 						</div>
->>>>>>> b29416ced775a81a6fd309712c38091869443aa2
 					</div>
 				</div>
 			</div>
@@ -215,14 +150,12 @@
 				if (!results[2]) return '';
 				return decodeURIComponent(results[2].replace(/\+/g, " "));
 			}
-
 			jQuery.ajaxPrefilter(function (options) {
 				if (options.crossDomain && jQuery.support.cors) {
 					options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
 				}
 			});
 			var accessToken = "";
-
 			$.ajax({
 				url: "https://accounts.spotify.com/api/token",
 				headers: {
