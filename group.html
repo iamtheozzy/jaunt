@@ -1,39 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Google Fonts -->
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	  crossorigin="anonymous">
+
+	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC|Megrim" rel="stylesheet">
 
-    <!-- Custom CSS File -->
-    <link rel="stylesheet" type="text/css" href="assets/css/group.css">
+	<!-- Custom CSS File -->
+	<link rel="stylesheet" type="text/css" href="assets/css/group.css">
 
-    <title>Jaunt! Let us tell you what to do.</title>
-  </head>
-  <body>
+	<title>Jaunt! Let us tell you what to do.</title>
+</head>
+
+<body>
 
 
 	<!-- Nav Bar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="index.html">Jaunt</a>
-    </nav>
+	<nav class="navbar">
+		<a class="navbar-brand" href="index.html">Jaunt</a>
+	</nav>
 
-    <!-- Jumbotron -->
+	<!-- Jumbotron -->
 	<div class="jumbotron jumbotron-fluid">
-	  <div class="container">
-	    <h1 class="display-4">Party time!</h1>
-	    <p class="lead">Can I join?</p>
-	  </div>
+		<div class="container">
+			<h1 class="display-4">Party time!</h1>
+			<p class="lead">Can I join?</p>
+		</div>
 	</div>
 	<!-- Jumbotron (End) -->
 
 
+<<<<<<< HEAD
       <!-- Food Input Row -->
 	  <div class="row">
 
@@ -96,60 +100,155 @@
 						    <p>Give us a category and we'll give you a playlist.</p>
 				            <button type="submit" class="btn btn-primary" id="music-button">Submit</button>
 						</form>
+=======
+	<!-- Food Input Row -->
+	<div class="row">
+
+		<!-- Food Card-->
+		<div class="col">
+			<div class="card" id="food-card">
+				<div class="card-body">
+					<h5 class="food-card-title" data-toggle="collapse" href="#food-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Beer me!</h5>
+					<p>Find me bars bro!</p>
+					<div class="collapse" id="food-expand-content">
+						<div class="card card-body" id="food-card-expanded">
+							<form>
+								<div class="form-group">
+									<label class="text-white" for="city-input">Where you at?</label>
+									<input type="text" class="form-control" id="city-input" aria-describedby="emailHelp" placeholder="city or zip code">
+								</div>
+								<div class="form-group">
+									<label for="cuisine-input" class="text-white">You're hungry too? You monster.</label>
+									<input type="text" class="form-control" id="cuisine-input" placeholder="mexican? Italian?">
+                  <small id="cuisine-help" class="form-text text-white">Add a cuisine for bars that serve food! </small>
+								</div>
+								<button type="submit" class="btn btn-primary" id="bar-button">Submit</button>
+								<button type="reset" class="btn btn-primary" id="barReset-button">Reset</button>
+								<div id="bar-results"></div>
+							</form>
+						</div>
 					</div>
-	          </div>
-            </div>
-		  </div>
-	    </div>
+				</div>
+			</div>
+		</div>
 
-	  </div>
-	  <!-- Music Input Row (End) -->
+	</div>
+	<!-- Food Input Row (End) -->
+
+	<!-- Concert Input Row -->
+	<div class="row">
+
+		<!-- Concert Card-->
+		<div class="col">
+			<div class="card" id="concert-card">
+				<div class="card-body">
+					<h5 class="concert-card-title" data-toggle="collapse" href="#concert-expand-content" role="button" aria-expanded="false"
+					  aria-controls="collapseExample">Let's check out a concert.</h5>
+					<p>Is your favorite group playing? Let's find out.</p>
+					<div class="collapse" id="concert-expand-content">
+						<div class="card card-body" id="concert-card-expanded">
+							<form>
+								<div class="form-group">
+									<label class="text-white" for="city-input">Where you at?</label>
+									<input type="text" class="form-control" id="location-input" aria-describedby="emailHelp" placeholder="city or zip code">
+									<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+								</div>
+								<div class="form-group">
 
 
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery.js"></script>
+								</div>
+								<button type="submit" class="btn btn-primary" id="concert-button">Submit</button>
+								<button type="reset" class="btn btn-primary" id="reset-button">Reset</button>
+								<div id="concert-results"></div>
 
-	<script> 
-	function getParameterByName(name, url) {
-	    if (!url) url = window.location.href;
-	    name = name.replace(/[\[\]]/g, "\\$&");
-	    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-	        results = regex.exec(url);
-	    if (!results) return null;
-	    if (!results[2]) return '';
-	    return decodeURIComponent(results[2].replace(/\+/g, " "));
-	}
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Concert Input Row (End) -->
 
-	jQuery.ajaxPrefilter(function (options) {
-	    if (options.crossDomain && jQuery.support.cors) {
-	        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-	    }
-	});
-	var accessToken = "";
-	
-	$.ajax({
-        url: "https://accounts.spotify.com/api/token",
-		headers: {
-		     'Authorization': 'Basic ' + btoa("1542d1f69f99495eba4fbc6ca5574eb2:cb77e7a06c034adeb0c8b90d571680d0")
-		 },
-		method: 'POST',
-		data: {
-	      "grant_type":    "authorization_code",
-	      "code":          getParameterByName("code"),
-	      "redirect_uri":  "https://iamtheozzy.github.io/jaunt/group.html"
-	    },
-      }).then(function(response) {
-	      console.log(response);
-	      accessToken = response.access_token
-      }); 
-  	</script>
+	<!-- Music Input Row -->
+	<div class="row">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<!-- Music Card-->
+		<div class="col">
+			<div class="card" id="music-card">
+				<div class="card-body">
+					<h5 class="music-card-title" data-toggle="collapse" href="#music-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Ain't no party like a dance party!</h5>
+					<p>Let's get some music playing (we won't judge).</p>
+					<div class="collapse" id="music-expand-content">
+						<div class="card card-body" id="music-card-expanded">
+							<div class="playlist">
+								<div class="loader">
+									<div class="inner-circle"></div>
+								</div>
+							</div>
+							<div class="form">
+								<form action="">
+									<input type="search" value="" id="category" placeholder="pop, party, chill, etc.">
+									<p>Give us a category and we'll give you a playlist.</p>
+									<input id="add-category" type="button" value="Create">
+								</form>
+							</div>
+						</div>
+>>>>>>> b29416ced775a81a6fd309712c38091869443aa2
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Music Input Row (End) -->
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <!-- Custom JavaScript -->
-	<script src="assets/javascript/spotify.js"></script>
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery.js"></script>
 
-  </body>
+		<script>
+			function getParameterByName(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, "\\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+					results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+
+			jQuery.ajaxPrefilter(function (options) {
+				if (options.crossDomain && jQuery.support.cors) {
+					options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
+				}
+			});
+			var accessToken = "";
+
+			$.ajax({
+				url: "https://accounts.spotify.com/api/token",
+				headers: {
+					'Authorization': 'Basic ' + btoa("1542d1f69f99495eba4fbc6ca5574eb2:cb77e7a06c034adeb0c8b90d571680d0")
+				},
+				method: 'POST',
+				data: {
+					"grant_type": "authorization_code",
+					"code": getParameterByName("code"),
+					"redirect_uri": "https://iamtheozzy.github.io/jaunt/group.html"
+				},
+			}).then(function (response) {
+				console.log(response);
+				accessToken = response.access_token
+			});
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		  crossorigin="anonymous"></script>
+
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		  crossorigin="anonymous"></script>
+
+		<!-- Custom JavaScript -->
+		<script src="assets/javascript/spotify.js"></script>
+		<script src="assets/javascript/app.alt.js"></script>
+</body>
+
 </html>
