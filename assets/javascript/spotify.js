@@ -1,5 +1,6 @@
 // Event listener for the create button
     $('#music-button').on('click', function() {
+    	event.preventDefault();
 
       var category = $('#music-input').val().trim();
       console.log(category);
