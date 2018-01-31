@@ -50,7 +50,8 @@ $(function() {
   // var city = "Chicago";
   // var cuisineChoise = "mexican";
 
-  var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&location="+ city + "&categories=" + cuisineChoise;
+  // holds API parameters to find the following= restaurants, open now, in user inut city and cuisine choice
+  var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&open_now=true&location="+ city + "&categories=" + cuisineChoise;
 
   $.ajax({
     type: "GET",
@@ -68,15 +69,20 @@ $(function() {
 
         // Creates clickable image that opens in yelp
         var restImg = obj.image_url; //stores business image link.
-        var img = $("<img>").attr("src", restImg).attr("class", "rest-img"); //creates image tag and adds image url and class for styling.
-        var imgLink = $("<br><a href=" + obj.url +"></a><br>").attr("target","_blank") //creates link that directs to restaurant yelp page
+        //creates image tag and adds image url and class for styling.
+        var img = $("<img>").attr("src", restImg).attr("class", "rest-img");
+        // stores address
+        var address = $("<p class='text-white'>" + obj.location.display_address + "</p>");
+        //creates link that directs to restaurant yelp page
+        var imgLink = $("<br><a href=" + obj.url +"></a><br>").attr("target","_blank")
 
         //adds restaurant name and adds it to link
         var restName = $("<h5>");
         restName.text(obj.name);
 
-        // This adds restaurant header, image and link to page
+        // This adds restaurant header, image, address and link to page
         imgLink.append(restName);
+        imgLink.append(address);
         imgLink.append(img);
 
         $("#food-results").append(imgLink);
