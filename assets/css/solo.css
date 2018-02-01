@@ -94,6 +94,11 @@ a:hover   {
 	border-color: white;
 }
 
+/* Resizes the images to be smaller */
+.rest-img {
+	width: 50%;
+}
+
 /* Movie Card ===============================================================*/
 #movie-card {
 	background-color: #03A9F4;
@@ -188,8 +193,3 @@ a:hover   {
 	100% {
 		border-size: 5px;
 	}
-}
-
-.rest-img {
-	width: 50%;
-}
