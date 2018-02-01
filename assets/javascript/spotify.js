@@ -48,3 +48,9 @@ $('#music-button').on('click', function() {
 
 });
 
+// Button click listener for the reset button
+$('#music-reset-button').on('click', function() {
+	event.preventDefault();
+	$('#music-input', '.playlist').empty();
+});
+
