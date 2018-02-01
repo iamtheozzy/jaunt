@@ -8,6 +8,7 @@ body {
 	font-family: 'Megrim', cursive;
 }
 
+/* This is the little logo in the top left corner */
 .navbar-brand {
 	color: white;
 }
@@ -46,16 +47,15 @@ p, label {
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
 
+/* Turns of text decorations when hovering over the cards to click ============*/
+a:hover   {
+  	text-decoration:  none;
+ }
 
 /* Text below the h1 in the jumbotron ==========================================*/
 .lead {
 	color: white;
 }
-
-/* Turns of text decorations when hovering over the cards to click ============*/
-a:hover   {
-  	text-decoration:  none;
-  	}
 
 /* Styling for the cards */
 

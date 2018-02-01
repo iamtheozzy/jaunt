@@ -18,22 +18,22 @@
   </head>
   <body>
 
-
 	<!-- Nav Bar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="index.html">Jaunt</a>
-    </nav>
+	<nav class="navbar">
+		<!-- Links Navbar to main index page-->
+		<a class="navbar-brand" href="index.html">Jaunt</a>
+	</nav>
 
-    <!-- Jumbotron -->
+	<!-- Jumbotron -->
 	<div class="jumbotron jumbotron-fluid">
-	  <div class="container">
-	    <h1 class="display-4">Let's stay in.</h1>
-	    <p class="lead">Oh you want to be alone? Okay.</p>
-	  </div>
+		<div class="container">
+			<h1 class="display-4">Let's stay in.</h1>
+			<p class="lead">Oh you want to be alone? Okay.</p>
+		</div>
 	</div>
 	<!-- Jumbotron (End) -->
 
-
+<!-- Page Container-->
 <div class="container">
 
 	<!-- Beer Card -- >
@@ -137,8 +137,10 @@
 	    }
 	});
 	
+	// Variable where our accessToken is stored, it is called in the Spotify.js file
 	var accessToken = "";
 
+	// Ajax call to request our accessToken
 	$.ajax({
         url: "https://accounts.spotify.com/api/token",
 		headers: {
@@ -154,14 +156,16 @@
 	      console.log(response);
 	      accessToken = response.access_token
       });
+
   	</script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="assets/javascript/app.js" charset="utf-8"></script>
 
     <!-- Custom JavaScript -->
+	<script src="assets/javascript/app.js" charset="utf-8"></script>
 	<script src="assets/javascript/spotify.js"></script>
+  
   </body>
 </html>

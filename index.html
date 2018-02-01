@@ -15,57 +15,60 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
     <title>Jaunt! Let us tell you what to do.</title>
+  
   </head>
+
   <body>
 
-
 	<!-- Nav Bar -->
-    <nav class="navbar">
-      <a class="navbar-brand" href="#">Jaunt</a>
-    </nav>
+	<nav class="navbar">
+		<!-- Links Navbar to main index page-->
+		<a class="navbar-brand" href="index.html">Jaunt</a>
+	</nav>
 
-    <!-- Jumbotron -->
+	<!-- Jumbotron -->
 	<div class="jumbotron jumbotron-fluid">
-	  <div class="container">
-	    <h1 class="display-4">Can't figure out what to do?</h1>
-	    <p class="lead">Let our highly scientific methods make a decision for you. </p>
-	  </div>
+		<div class="container">
+			<h1 class="display-4">Can't figure out what to do?</h1>
+			<p class="lead">Let our highly scientific methods make a decision for you. </p>
+		</div>
 	</div>
 	<!-- Jumbotron (End) -->
 
-      <!-- Two Main Cards Row -->
-	  <div class="row">
 
-	  	<!-- Solo Card-->
-	    <div class="col">
-	    <a href="https://accounts.spotify.com/authorize/?client_id=1542d1f69f99495eba4fbc6ca5574eb2&response_type=code&redirect_uri=https%3A%2F%2Fiamtheozzy.github.io%2Fjaunt%2Fsolo.html">
-		  <div class="card" id="solo-card">
-		    <div class="card-body">
-		      <h5 class="card-title">Solo Night</h5>
-		      <p class="card-text">Having a night in?<br>Just can't stand to be around anyone?<br>We get it.</p>
-		    </div>
-		  </div>
+	<!-- Two Main Cards Row -->
+	<div class="row">
+
+		<!-- Solo Card-->
+		<div class="col">
+		<!-- Makes the entire card a clickable link to the entire card to the solo.html page with the Spotify authorization baked in -->
+		<a href="https://accounts.spotify.com/authorize/?client_id=1542d1f69f99495eba4fbc6ca5574eb2&response_type=code&redirect_uri=https%3A%2F%2Fiamtheozzy.github.io%2Fjaunt%2Fsolo.html">
+			<div class="card" id="solo-card">
+				<div class="card-body">
+					<h5 class="card-title">Solo Night</h5>
+					<p class="card-text">Having a night in?<br>Just can't stand to be around anyone?<br>We get it.</p>
+				</div>
+			</div>
 		</a>
-	    </div>
+		</div>
 	    <!-- Solo Card (End) -->
 
-        <!-- Group Card -->
-	    <div class="col">
-	    <a href="https://accounts.spotify.com/authorize/?client_id=1542d1f69f99495eba4fbc6ca5574eb2&response_type=code&redirect_uri=https%3A%2F%2Fiamtheozzy.github.io%2Fjaunt%2Fgroup.html">
-	      <div class="card" id="group-card">
-	        <div class="card-body">
-	          <h5 class="card-title">Group Night</h5>
-	          <p class="card-text">Ready to rage?<br>Or maybe just have a nice dinner with friends?<br>We can help.</p>
-	        </div>
-	      </div>
-	    </a>
-	    </div>
-        <!-- Group Card (End) -->
+		<!-- Group Card -->
+		<div class="col">
+		<!-- Makes the entire card a clickable link to to the group.html page with the Spotify authorization baked in -->
+		<a href="https://accounts.spotify.com/authorize/?client_id=1542d1f69f99495eba4fbc6ca5574eb2&response_type=code&redirect_uri=https%3A%2F%2Fiamtheozzy.github.io%2Fjaunt%2Fgroup.html">
+			<div class="card" id="group-card">
+				<div class="card-body">
+					<h5 class="card-title">Group Night</h5>
+					<p class="card-text">Ready to rage?<br>Or maybe just have a nice dinner with friends?<br>We can help.</p>
+				</div>
+			</div>
+		</a>
+		</div>
+		<!-- Group Card (End) -->
 
-	  </div>
-	  <!-- Two Main Cards Row (End) -->
-
-    <!-- Optional JavaScript -->
+	</div>
+	<!-- Two Main Cards Row (End) -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery.js"></script>
