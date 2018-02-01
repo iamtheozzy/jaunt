@@ -131,6 +131,11 @@ a:hover   {
 	border-color: white;
 }
 
+/* Resizes the images to be smaller */
+.rest-img {
+	width: 50%;
+}
+
 /* Music Card ===============================================================*/
 #music-card {
 	background-color: #E91E63;
