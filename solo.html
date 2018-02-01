@@ -144,11 +144,12 @@
 	$.ajax({
         url: "https://accounts.spotify.com/api/token",
 		headers: {
-		     'Authorization': 'Basic ' + btoa("1542d1f69f99495eba4fbc6ca5574eb2:cb77e7a06c034adeb0c8b90d571680d0")
+		     'Authorization': 'Basic ' + btoa("1542d1f69f99495eba4fbc6ca5574eb2:cb77e7a06c034adeb0c8b90d571680d0"),
+		     'Content-Type': 'application/x-www-form-urlencoded'
 		 },
 		method: 'POST',
 		data: {
-	      "grant_type":    "authorization_code",
+	      "grant_type":    "client_credentials",
 	      "code":          getParameterByName("code"),
 	      "redirect_uri":  "https://iamtheozzy.github.io/jaunt/solo.html"
 	    },
