@@ -48,7 +48,7 @@ p, label {
 }
 
 /* Turns of text decorations when hovering over the cards to click ============*/
-a:hover   {
+a:hover {
   	text-decoration:  none;
   }
 
@@ -96,11 +96,6 @@ a:hover   {
 	border-color: white;
 }
 
-/* Resizes the images to be smaller */
-.rest-img {
-	width: 50%;
-}
-
 /* Movie Card ===============================================================*/
 #concert-card {
 	background-color: #03A9F4;
@@ -136,11 +131,7 @@ a:hover   {
 	border-width: 2px;
 	border-radius: 5px;
 	border-color: white;
-}
-
-/* Resizes the images to be smaller */
-.rest-img {
-	width: 50%;
+	margin-bottom: 25px;
 }
 
 /* Music Card ===============================================================*/
@@ -188,6 +179,14 @@ a:hover   {
 
 .row {
 	margin: 0px;
+}
+
+/* Resizes the images to be smaller and gives them a border */
+.rest-img, img {
+	width: 40%;
+	border-width: 5px;
+	border: solid;
+	border-color: white;
 }
 
 /* Loading animation that shows when the Spotify playlist is loading ===========*/

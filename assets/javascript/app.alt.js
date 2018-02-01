@@ -16,7 +16,7 @@ $(function () {
         event.preventDefault();
         var city = $("#location-input").val();
         //  var city = "Chicago" // ! << Uncomment to hardcode city
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-01T12:27:00Z&keyword=music&city=";
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-03T00:00:00Z&keyword=music&city=";
 
         // Call function
         getQuote();
@@ -28,12 +28,13 @@ $(function () {
             // ! Debug
             console.log(data);
             console.log(data._embedded.events[0].name);
+            console.log(data._embedded.events[0].images[0].url);
             console.log(data._embedded.events.length); // Number of events in array 
             // ! Debug
 
             // For Loop 
-            for (var i = 0; i < 5; i++) {
-              var obj = data._embedded.events[i];
+            for (var i = 0; i < 8; i++) {
+              var concertId = data._embedded.events[i];
               // console.log(obj);
               // console.log(obj.dates.start.localDate);
               // ! Debug
@@ -44,15 +45,16 @@ $(function () {
               // ! debug
 
               // Variables
-              var artistName = $("<h5>").text(obj.name);
-              var artistURL = $("<a>").attr("href", obj.url).attr("target", "_blank").append(artistName);
-              var date_start = $("<h5>").text(obj.dates.start.localDate);
+              var artistName = $("<h5>").text(concertId.name);
+              var artistImage = $("<img>").attr("src", concertId.images[0].url);
+              var artistURL = $("<a>").attr("href", concertId.url).attr("target", "_blank").append(artistName);
+              var venue = $("<p>").text(concertId._embedded.venues[0].name);
               //var artistImage = obj.images[i].url;
 
               // Results appended to document
-              $("#concert-results").append(date_start);
-              //$("#concert-results").append(artistImage);
+              $("#concert-results").append(artistImage);
               $("#concert-results").append(artistURL);
+              $("#concert-results").append(venue);
               // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
             }
           })

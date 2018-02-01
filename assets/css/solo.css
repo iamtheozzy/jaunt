@@ -94,11 +94,6 @@ a:hover   {
 	border-color: white;
 }
 
-/* Resizes the images to be smaller */
-.rest-img {
-	width: 50%;
-}
-
 /* Movie Card ===============================================================*/
 #movie-card {
 	background-color: #03A9F4;
@@ -154,6 +149,14 @@ a:hover   {
 	font-family: 'Alegreya Sans SC', sans-serif;
 	border-width: 2px;
 	border-radius: 5px;
+	border-color: white;
+}
+
+/* Resizes the images to be smaller and gives them a border */
+.rest-img, img {
+	width: 40%;
+	border-width: 5px;
+	border: solid;
 	border-color: white;
 }
 
