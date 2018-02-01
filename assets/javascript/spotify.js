@@ -1,9 +1,7 @@
 // Button click listener for the submit button
 $('#music-button').on('click', function() {
-	event.preventDefault();
-	var queryURL = "";
-	var baseUrl = "";
-	$('.playlist').empty();
+  event.preventDefault();
+  $('.playlist').empty();
   
   // Set the value in the input box as the category variable
   var category = $('#music-input').val().trim();
