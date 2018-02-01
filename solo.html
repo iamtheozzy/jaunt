@@ -36,34 +36,33 @@
 <!-- Page Container-->
 <div class="container">
 
-	<!-- Beer Card -- >
-	<div class="card" id="food-card">
-		<div class="card-body">
-			<!-- This is the part that craetes the collapsable section-->
-			<h5 class="food-card-title" data-toggle="collapse" href="#food-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Hungry?</h5>
-			<p>Let's get some food.</p>
-				<div class="collapse" data-toggle="collapse" id="food-expand-content">
-					<div class="card card-body" id="food-card-expanded">
-					<!-- Form group that is within the food card -->
-					<form>
-					<div class="form-group">
-						<label class= "text-white" for="city-input">Where you at?</label>
-						<input type="text" class="form-control" id="city-input" aria-describedby="emailHelp" placeholder="city or zip code">
-						<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-					</div>
-					<div class="form-group">
-						<label for="cuisine-input" class="text-white">Whatchu want?</label>
-						<input type="text" class="form-control" id="cuisine-input" placeholder="Chinese, Mexican,etc">
-					</div>
-					<button type="submit" class="btn btn-primary" id="food-button">Submit</button>
-					<button type="reset" class="btn btn-primary" id="reset-button">Reset</button>
+	<!-- Food Card -->
+    <div class="card" id="food-card">
+        <div class="card-body">
+          <h5 class="food-card-title" data-toggle="collapse" href="#food-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Hungry?</h5>
+          <p>Let's get some food.</p>
+            <div class="collapse" id="food-expand-content">
+			      <div class="card card-body" id="food-card-expanded">
+              <!-- Form group that is within the food card -->
+              <form>
+                <div class="form-group">
+                  <label class= "text-white" for="city-input">Where you at?</label>
+                  <input type="text" class="form-control" id="city-input" aria-describedby="emailHelp" placeholder="city or zip code">
+                  <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <div class="form-group">
+                  <label for="cuisine-input" class="text-white">Whatchu want?</label>
+                  <input type="text" class="form-control" id="cuisine-input" placeholder="Chinese, Mexican,etc">
+                </div>
+                <button type="submit" class="btn btn-primary" id="food-button">Submit</button>
+                <button type="reset" class="btn btn-primary" id="reset-button">Reset</button>
                 <div id="food-results"></div>
-					</form>
+              </form>
 			      </div>
-				</div>
-		</div>
-	</div>
-	<!-- Beer Card (End) -->
+	      </div>
+        </div>
+    </div>
+	<!-- Food Card (End) -->
 
 
 	<!-- Movie Card -->

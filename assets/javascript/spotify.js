@@ -27,13 +27,16 @@ $('#music-button').on('click', function() {
 	function getRandomPlaylist() {
      var randoNum = Math.floor(Math.random() * playlistIds.length);
      return playlistIds[randoNum];
+     console.log(playlistIds[randoNum]);
    }
     
     // This for loop grabs the random playlist ID using the getRandomPlaylist function and set it equal to the randomPlaylist variable.
     var randomPlaylist = [];
   	  for (let i = 0; i < 1; i++) {
 	    randomPlaylist.push(getRandomPlaylist(playlistIds));
+	    console.log(randomPlaylist);
 	  }
+
     // Insert the randomPlaylist ID into the URL needed to pull the playlist from Spotify.
 	var baseUrl = 'https://open.spotify.com/embed?uri=spotify%3Auser%3Aspotify%3Aplaylist%3A' + randomPlaylist + '&theme=white';
     // While the playlist is loading the loader icon will show.
