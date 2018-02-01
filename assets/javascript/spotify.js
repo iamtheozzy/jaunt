@@ -1,6 +1,9 @@
 // Button click listener for the submit button
 $('#music-button').on('click', function() {
 	event.preventDefault();
+	var queryURL = "";
+	var baseUrl = "";
+	$('.playlist').empty();
   
   // Set the value in the input box as the category variable
   var category = $('#music-input').val().trim();
@@ -25,6 +28,7 @@ $('#music-button').on('click', function() {
   	var playlistIds = [response.playlists.items[0].id, response.playlists.items[1].id, response.playlists.items[2].id, response.playlists.items[3].id, response.playlists.items[4].id];
 	// This function chooses a random number from 1-5 so we can grab a random playlist ID
 	function getRandomPlaylist() {
+	 var randomPlaylist = [];
      var randoNum = Math.floor(Math.random() * playlistIds.length);
      return playlistIds[randoNum];
      console.log(randomNum);
@@ -47,10 +51,3 @@ $('#music-button').on('click', function() {
 })
 
 });
-
-// Button click listener for the reset button
-$('#music-reset-button').on('click', function() {
-	event.preventDefault();
-	$('#music-input', '.playlist').empty();
-});
-

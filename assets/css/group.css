@@ -171,7 +171,7 @@ a:hover   {
 }
 
 /* This is the create button */
-#music-button,#music-reset-button {
+#music-button, {
 	background-color: #FCE4EC;
 	color: #E91E63;
 	font-family: 'Alegreya Sans SC', sans-serif;
