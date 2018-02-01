@@ -10,35 +10,54 @@
 
 $(function () {
 
-    $("#concert-button").on("click", function () {
-    event.preventDefault();
-        var city = $("#location-input").val(); // ! << UNCOMMENT, GENERATE INPUT BOX & #ID AND MATCH TO $("#userInput")
-        //  var city = "Chicago" // ! << UNCOMMENT TO HARDCODE
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=music&city=";
-          getQuote(); // ! << CALL getQuote FUNCTION
-        console.log(city);
+$(function () {
+
+      $("#concert-button").on("click", function () {
+        event.preventDefault();
+        var city = $("#location-input").val();
+        //  var city = "Chicago" // ! << Uncomment to hardcode city
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-01T12:27:00Z&keyword=music&city=";
+
+        // Call function
+        getQuote();
+
         // AJAX call ----
         function getQuote() {
-            $.get(queryURL + city + "&apikey=RAJIFQErgEgMNdIAtVrRj7Z6bAWPY0cl", function (data, status) {
-                 console.log(data);
-                 console.log(data._embedded.events[0].name);
-                 console.log(data._embedded.events.length);
-                for (var i = 0; i < 5; i++) {
-                    var obj = data._embedded.events[i];
-                    console.log(obj);
-                    console.log(obj.name);
-                  //  var div = $("<div>"); // Create a div
-                  //  div.html(obj.name);
-                //    $("#concert-results").append(div);
-                    var artistName = $("<h5>").text(obj.name);
-                    var artistURL = $("<a>").attr("href", obj.url).attr("target","_blank").append(artistName);
-                    $("#").append(artistURL); // ! << UNCOMMENT & GENERATE/MATCH #ID
-                    $("#concert-results").append(artistURL);
-                    // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
-                }
-            })
+          $.get(queryURL + city + "&apikey=RAJIFQErgEgMNdIAtVrRj7Z6bAWPY0cl", function (data, status) {
+
+            // ! Debug
+            console.log(data);
+            console.log(data._embedded.events[0].name);
+            console.log(data._embedded.events.length); // Number of events in array 
+            // ! Debug
+
+            // For Loop 
+            for (var i = 0; i < 5; i++) {
+              var obj = data._embedded.events[i];
+              // console.log(obj);
+              // console.log(obj.dates.start.localDate);
+              // ! Debug
+              //    var div = $("<div>"); // Create a div
+              //    div.html(obj);
+              //    console.log(obj);
+              //    $("#concert-results").append(div);
+              // ! debug
+
+              // Variables
+              var artistName = $("<h5>").text(obj.name);
+              var artistURL = $("<a>").attr("href", obj.url).attr("target", "_blank").append(artistName);
+              var date_start = $("<h5>").text(obj.dates.start.localDate);
+              //var artistImage = obj.images[i].url;
+
+              // Results appended to document
+              $("#concert-results").append(date_start);
+              //$("#concert-results").append(artistImage);
+              $("#concert-results").append(artistURL);
+              // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
+            }
+          })
         }
-    })
+      })
     //=======================================================================================
     //
     //  ##    ##  #####  ##      #####          ####    #####     #####   ##   ##  #####
