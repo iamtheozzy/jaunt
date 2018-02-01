@@ -161,13 +161,13 @@
 	        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
 	    }
 	});
-
+	
 	// Variable where our accessToken is stored, it is called in the Spotify.js file
 	var accessToken = "";
 
 	// Ajax call to request our accessToken
 	$.ajax({
-	    url: "https://accounts.spotify.com/api/token",
+        url: "https://accounts.spotify.com/api/token",
 		headers: {
 		     'Authorization': 'Basic ' + btoa("1542d1f69f99495eba4fbc6ca5574eb2:cb77e7a06c034adeb0c8b90d571680d0")
 		 },
@@ -177,12 +177,12 @@
 	      "code":          getParameterByName("code"),
 	      "redirect_uri":  "https://iamtheozzy.github.io/jaunt/solo.html"
 	    },
-	  }).then(function(response) {
+      }).then(function(response) {
 	      console.log(response);
 	      accessToken = response.access_token
-	  });
-	  
-	</script>
+      });
+
+  	</script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
 	  crossorigin="anonymous"></script>
