@@ -147,6 +147,7 @@ $(function () {
 //
 //===========================================================
 
+/*
 $(function () {
 //  $("#getQuote").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
         var queryURL = "http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=9ece61cd5921f21d347c960c0218b3bd&format=json"
@@ -171,6 +172,8 @@ $(function () {
             })
         }
 })
+*/
+
 //================================================================================
 //
 //   ####    #####      ###     ####  #####  ##     ##   #####   ######  #####
@@ -181,7 +184,8 @@ $(function () {
 //
 //================================================================================
 
-    $(function () {
+  /*  
+  $(function () {
     //  $("#getQuote").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
             var queryURL = "http://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-01-30T00%3A30Z&imageSize=Sm&imageText=true&api_key=xkhnkvkca2j54eavaxaarwhx"
             //  var apikey = ("xkhnkvkca2j54eavaxaarwhx") // ! << STORAGE ONLY -- NO NEED TO UNCOMMENT
@@ -210,3 +214,4 @@ $(function () {
             }
         })
     });
+    */

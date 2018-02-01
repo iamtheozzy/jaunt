@@ -27,7 +27,7 @@ $('#music-button').on('click', function() {
 	function getRandomPlaylist() {
      var randoNum = Math.floor(Math.random() * playlistIds.length);
      return playlistIds[randoNum];
-     console.log(playlistIds[randoNum]);
+     console.log(randomNum);
    }
     
     // This for loop grabs the random playlist ID using the getRandomPlaylist function and set it equal to the randomPlaylist variable.
