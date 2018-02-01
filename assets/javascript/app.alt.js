@@ -178,4 +178,6 @@ $(function () {
 
 
 
-}); //End of Page Ready Function
+}); 
+})
+//End of Page Ready Function
