@@ -1,6 +1,7 @@
 // Button click listener for the submit button
 $('#music-button').on('click', function() {
   event.preventDefault();
+  var randomPlaylist = [];
   
   // Set the value in the input box as the category variable
   var category = $('#music-input').val().trim();
