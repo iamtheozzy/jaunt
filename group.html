@@ -44,9 +44,10 @@
 		<div class="col">
 			<div class="card" id="food-card">
 				<div class="card-body">
+					<!-- This is the part that craetes the collapsable section-->
 					<h5 class="food-card-title" data-toggle="collapse" href="#food-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Beer me!</h5>
 					<p>Find me bars bro!</p>
-					<div class="collapse" data-toggle="collapse" id="food-expand-content">
+					<div class="collapse" id="food-expand-content">
 						<div class="card card-body" id="food-card-expanded">
 							<form>
 								<div class="form-group">
@@ -71,42 +72,41 @@
 	</div>
 	<!-- Food Input Row (End) -->
 
-<!-- Concert Input Row -->
-<div class="row">
+	<!-- Concert Input Row -->
+	<div class="row">
 
-	<!-- Concert Card-->
+		<!-- Concert Card-->
+		<div class="col">
+			<div class="card" id="concert-card">
+				<div class="card-body">
+					<!-- This is the part that craetes the collapsable section-->
+					<h5 class="concert-card-title" data-toggle="collapse" href="#concert-expand-content" role="button" aria-expanded="false"
+					  aria-controls="collapseExample">Let's check out a concert.</h5>
+					<p>Is your favorite group playing? Let's find out.</p>
+					<div class="collapse" id="concert-expand-content">
+						<div class="card card-body" id="concert-card-expanded">
+							<form>
+								<div class="form-group">
+									<label class="text-white" for="city-input">Where you at?</label>
+									<input type="text" class="form-control" id="location-input" aria-describedby="emailHelp" placeholder="city or zip code">
+									<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+								</div>
+								<div class="form-group">
 
-	<div class="col">
-		<div class="card" id="concert-card">
-			<div class="card-body">
-				<h5 class="concert-card-title" data-toggle="collapse" href="#concert-expand-content" role="button" aria-expanded="false"
-				    aria-controls="collapseExample">Let's check out a concert.</h5>
-				<p>Is your favorite group playing? Let's find out.</p>
-				<div class="collapse" data-toggle="collapse" id="concert-expand-content">
-					<div class="card card-body" id="concert-card-expanded">
-						<form>
-							<div class="form-group">
-								<label class="text-white" for="city-input">Where you at?</label>
-								<input type="text" class="form-control" id="location-input" aria-describedby="emailHelp" placeholder="city ">
-								<!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-							</div>
-							<div class="form-group">
 
+								</div>
+								<button type="submit" class="btn btn-primary" id="concert-button">Submit</button>
+								<button type="reset" class="btn btn-primary" id="reset-button">Reset</button>
+								<div id="concert-results"></div>
 
-							</div>
-							<button type="submit" class="btn btn-primary" id="concert-button">Submit</button>
-							<button type="reset" class="btn btn-primary" id="reset-button">Reset</button>
-							<div id="concert-results"></div>
-
-						</form>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!-- Concert Input Row (End) -->
-
+	<!-- Concert Input Row (End) -->
 
 	<!-- Music Input Row -->
 	<div class="row">
@@ -115,9 +115,10 @@
 		<div class="col">
 			<div class="card" id="music-card">
 				<div class="card-body">
+					<!-- This is the part that craetes the collapsable section-->
 					<h5 class="music-card-title" data-toggle="collapse" href="#music-expand-content" role="button" aria-expanded="false" aria-controls="collapseExample">Ain't no party like a dance party!</h5>
 					<p>Let's get some music playing (we won't judge).</p>
-					<div class="collapse" data-toggle="collapse" id="music-expand-content">
+					<div class="collapse" id="music-expand-content">
 						<div class="card card-body" id="music-card-expanded">
 							<div class="playlist">
 								<div class="loader">

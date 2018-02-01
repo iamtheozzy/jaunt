@@ -94,6 +94,11 @@ a:hover   {
 	border-color: white;
 }
 
+/* Resizes the images to be smaller */
+.rest-img {
+	width: 50%;
+}
+
 /* Movie Card ===============================================================*/
 #concert-card {
 	background-color: #03A9F4;
