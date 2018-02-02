@@ -171,9 +171,9 @@ $(function () {
           $.get(queryURL, function (data, status) {
             console.log(data);
         //  for (var i = 0; i < data.length; i++) { // ! << DEBUG
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 5; i++) {
               var obj = data[i];
-              console.log(obj);
+              // console.log(obj);
               var div = $("<div>");
               div.html(obj.program.title);
               $("#well-section").append(div);
