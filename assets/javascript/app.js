@@ -46,6 +46,7 @@ $(document).ready(function() {
     // creating variables of user inputs
     var city = $("#city-input").val().trim().toLowerCase();
     var cuisineChoise = $("#cuisine-input").val().trim().toLowerCase();
+    $('.food-loader').toggleClass('show');
     // use variables below when testing api functionality
     // var city = "Chicago";
     // var cuisineChoise = "mexican";
@@ -84,7 +85,8 @@ $(document).ready(function() {
           imgLink.append(restName);
           imgLink.append(address);
           imgLink.append(img);
-
+          
+          $('.food-loader').toggleClass('show');
           $("#food-results").append(imgLink);
           clearFoodCard();
         }
@@ -147,6 +149,7 @@ $(function () {
 //
 //===========================================================
 
+/*
 $(function () {
 //  $("#getQuote").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
         var queryURL = "http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=9ece61cd5921f21d347c960c0218b3bd&format=json"
@@ -171,6 +174,7 @@ $(function () {
             })
         }
 })
+*/
 //================================================================================
 //
 //   ####    #####      ###     ####  #####  ##     ##   #####   ######  #####

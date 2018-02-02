@@ -57,6 +57,10 @@
                 <button type="submit" class="btn btn-primary" id="food-button">Submit</button>
                 <button type="reset" class="btn btn-primary" id="reset-button">Reset</button>
                 <div id="food-results"></div>
+                	<br>
+					<div class="food-loader">
+						<div class="food-inner-circle"></div>
+					</div>
               </form>
 			      </div>
 	      </div>
@@ -72,7 +76,10 @@
 		<h5 class="movie-card-title" data-toggle="collapse" href="#movie-expand-content" id="display-movie" role="button" aria-expanded="false" aria-controls="collapseExample">Let's watch a movie.</h5>
 	    <p>Stop scrolling through Netflix, let me pick.</p>
 			<div class="collapse" data-toggle="collapse" id="movie-expand-content">
-				<div class="card card-body" id="movie-card-expanded" style="color:  white">
+				<div class="card card-body" id="movie-card-expanded">
+					<div class="movie-loader">
+						<div class="movie-inner-circle"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -97,6 +104,7 @@
 					</div>
 						<!-- Input form for categories -->
 						<div class="form">
+							<br>
 							<form>
 							<input type="text" class="form-control" id="music-input" placeholder="Pop, Party, Chill, etc.">
 							<p>Give us a category and we'll give you a playlist.</p>

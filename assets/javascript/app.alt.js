@@ -99,6 +99,7 @@ $(function () {
       // creating variables of user inputs
       var city = $("#city-input").val().trim().toLowerCase();
       var cuisineChoise = $("#cuisine-input").val().trim().toLowerCase();
+      $('.bar-loader').toggleClass('show');
       // use variables below when testing api functionality
       // var city = "Chicago";
       // var cuisineChoise = "mexican";
@@ -137,7 +138,8 @@ $(function () {
             imgLink.append(restName);
             imgLink.append(address);
             imgLink.append(img);
-
+            
+            $('.bar-loader').toggleClass('show');
             $("#bar-results").append(imgLink);
             clearBarCard(); //resets user input fields
 
@@ -163,6 +165,7 @@ $(function () {
 
     $(function () {
       $("#display-movie").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
+      $('.loader').toggleClass('show');
         var queryURL = "http://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-01-29T03%3A00Z&api_key=xkhnkvkca2j54eavaxaarwhx"
         //  var apikey = ("xkhnkvkca2j54eavaxaarwhx") // ! << STORAGE ONLY -- NO NEED TO UNCOMMENT
         getQuote(); // ! <<  CALL getQuote FUNCTION
@@ -177,14 +180,18 @@ $(function () {
               var div = $("<div>");
               div.html(obj.program.title);
               $("#well-section").append(div);
+              console.log(obj.program);
 
               // ! Added url ===========================
               var genre = $("<h6>").text(obj.program.genres);
               var programDetails = $("<h6>").text(obj.program.longDescription);
               var title = $("<h5>").text(obj.program.title);
+              // var programImage = $("<img>").attr("src", obj.program.preferredImage.uri);
          //     console.log(station);
         //      $("#movie-card-expanded").append(station);
+              $('.movie-loader').remove();
               $("#movie-card-expanded").append('<h6>Title:</h6> ', title);
+              // $("#movie-card-expanded").append(programImage);
               $("#movie-card-expanded").append('<h6>GENRE:</h6> ', genre); // ! << UNCOMMENT & GENERATE/MATCH  #ID
               $("#movie-card-expanded").append('DESCRIPTION: ', programDetails); // ! << UNCOMMENT & GENERATE/MATCH  #ID
               $("#movie-card-expanded").append("<hr>");
