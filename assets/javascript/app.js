@@ -26,7 +26,7 @@ $(document).ready(function() {
 
 
   $("#food-button").on("click", function() {
-    // event.preventDefault();
+    event.preventDefault();
     /**
      * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
      **/
