@@ -73,12 +73,12 @@ $(document).ready(function() {
           //creates image tag and adds image url and class for styling.
           var img = $("<img>").attr("src", restImg).attr("class", "rest-img");
           // stores address
-          var address = $("<p class='text-white'>" + obj.location.display_address + "</p>");
+          var address = $("<p class='food'>" + obj.location.display_address + "</p>");
           //creates link that directs to restaurant yelp page
           var imgLink = $("<br><a href=" + obj.url + "></a><br>").attr("target", "_blank")
 
           //adds restaurant name and adds it to link
-          var restName = $("<h5>");
+          var restName = $("<h4 class='food'>");
           restName.text(obj.name);
 
           // This adds restaurant header, image, address and link to page

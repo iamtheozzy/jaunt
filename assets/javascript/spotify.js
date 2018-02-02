@@ -4,7 +4,6 @@ $('#music-button').on('click', function() {
   var playlistIds = [];
   // Set the value in the input box as the category variable
   var category = $('#music-input').val().trim();
-  console.log(category);
   // While the playlist is being grabbed a loader is displayed
   $('.loader').toggleClass('show');
 
@@ -28,14 +27,12 @@ $('#music-button').on('click', function() {
 	 var randomPlaylist = [];
      var randoNum = Math.floor(Math.random() * playlistIds.length);
      return playlistIds[randoNum];
-     console.log(randomNum);
    }
     
     // This for loop grabs the random playlist ID using the getRandomPlaylist function and set it equal to the randomPlaylist variable.
     var randomPlaylist = [];
   	  for (let i = 0; i < 1; i++) {
 	    randomPlaylist.push(getRandomPlaylist(playlistIds));
-	    console.log(randomPlaylist);
 	  }
 
     // Insert the randomPlaylist ID into the URL needed to pull the playlist from Spotify.

@@ -96,7 +96,16 @@ a:hover {
 	border-color: white;
 }
 
-/* Movie Card ===============================================================*/
+p.food {
+	color: #F3E5F5;
+}
+
+h4.food {
+	color: #F3E5F5;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+/* Concert Card ===============================================================*/
 #concert-card {
 	background-color: #03A9F4;
 	text-align: right;
@@ -134,7 +143,16 @@ a:hover {
 	margin-bottom: 25px;
 }
 
-/* Music Card ===============================================================*/
+p.concert {
+	color: #E3F2FD;
+}
+
+h4.concert {
+	color: #E3F2FD;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+/* Spotify Card ===============================================================*/
 #music-card {
 	background-color: #E91E63;
 	color: white;
@@ -171,6 +189,15 @@ a:hover {
 	border-color: white;
 }
 
+p.music {
+	color: #FCE4EC;
+}
+
+h4.music {
+
+}
+
+/* Spotify iframe, make it so the size adjust with the div/window and doesnt pop out */
 iframe {
     display: block;
     width: 40%;

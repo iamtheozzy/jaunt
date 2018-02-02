@@ -45,18 +45,18 @@ $(function () {
             // ! debug
 
             // Variables
-            var artistName = $("<h6>").text(concertId.name);
+            var artistName = $("<h4 class='concert'>").text(concertId.name);
             var artistImage = $("<img>").attr("src", concertId.images[0].url);
             var artistURL = $("<a>").attr("href", concertId.url).attr("target", "_blank").append(artistName);
-            var venue = $("<h6>").text(concertId._embedded.venues[0].name);
-            var date_start = $("<h6>").text(concertId.dates.start.localDate);
+            var venue = $("<p class='concert'>").text(concertId._embedded.venues[0].name);
+            var date_start = $("<p class='concert'>").text(concertId.dates.start.localDate);
             //var artistImage = obj.images[i].url;
 
             // Results appended to document
-            $("#concert-results").append(date_start);
             $("#concert-results").append(artistImage);
             $("#concert-results").append(artistURL);
             $("#concert-results").append(venue);
+            $("#concert-results").append(date_start);
             // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
           }
         })
@@ -126,12 +126,12 @@ $(function () {
             //creates image tag and adds image url and class for styling.
             var img = $("<img>").attr("src", restImg).attr("class", "rest-img");
             //store address
-            var address = $("<p class='text-white'>" + obj.location.display_address + "</p>");
+            var address = $("<p class='food'>" + obj.location.display_address + "</p>");
             //creates link that directs to restaurant yelp page
             var imgLink = $("<br><a href=" + obj.url + "></a><br>").attr("target", "_blank");
 
             //adds restaurant name and adds it to link
-            var restName = $("<h5>");
+            var restName = $("<h4 class='food'>");
             restName.text(obj.name);
 
             // This adds restaurant header, image, address and link to page
@@ -182,16 +182,16 @@ $(function () {
               console.log(obj.program);
 
               // ! Added url ===========================
-              var genre = $("<h6>").text(obj.program.genres);
-              var programDetails = $("<h6>").text(obj.program.longDescription);
-              var title = $("<h5>").text(obj.program.title);
+              var genre = $("<p>").text(obj.program.genres);
+              var programDetails = $("<p>").text(obj.program.longDescription);
+              var title = $("<p>").text(obj.program.title);
               // var programImage = $("<img>").attr("src", obj.program.preferredImage.uri);
          //     console.log(station);
         //      $("#movie-card-expanded").append(station);
-              $("#movie-card-expanded").append('<h6>Title:</h6> ', title);
+              $("#movie-card-expanded").append(title);
               // $("#movie-card-expanded").append(programImage);
-              $("#movie-card-expanded").append('<h6>GENRE:</h6> ', genre); // ! << UNCOMMENT & GENERATE/MATCH  #ID
-              $("#movie-card-expanded").append('DESCRIPTION: ', programDetails); // ! << UNCOMMENT & GENERATE/MATCH  #ID
+              $("#movie-card-expanded").append(genre); // ! << UNCOMMENT & GENERATE/MATCH  #ID
+              $("#movie-card-expanded").append(programDetails); // ! << UNCOMMENT & GENERATE/MATCH  #ID
               $("#movie-card-expanded").append("<hr>");
               // "http://developer.tmsapi.com/io-docs" API Developer Info.
             }

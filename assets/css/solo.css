@@ -41,6 +41,10 @@ h5 {
 	font-size: 40px;
 }
 
+h5.movie {
+	color: black;
+}
+
 /* Font in the cards ============================================================*/
 p, label {
 	color: white;
@@ -94,6 +98,15 @@ a:hover   {
 	border-color: white;
 }
 
+p.food {
+	color: #F3E5F5;
+}
+
+h4.food {
+	color: #F3E5F5;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 /* Movie Card ===============================================================*/
 #movie-card {
 	background-color: #03A9F4;
@@ -114,7 +127,7 @@ a:hover   {
 	border: 0px;
 }
 
-/* Music Card ===============================================================*/
+/* Spotify Card ===============================================================*/
 #music-card {
 	background-color: #E91E63;
 	margin-top: 50px;
@@ -139,7 +152,7 @@ a:hover   {
 	border-radius: 5px;
 	border-width: 2px;
 	font-family: 'Alegreya Sans SC', sans-serif;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 /* This is the create button */
@@ -152,9 +165,14 @@ a:hover   {
 	border-color: white;
 }
 
+p.music {
+	color: #FCE4EC;
+}
+
+/* Spotify iframe, make it so the size adjust with the div/window and doesnt pop out */
 iframe {
     display: block;
-    width: 100%;
+    width: 90%;
 }
 
 /* Resizes the images to be smaller and gives them a border */
