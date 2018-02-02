@@ -165,7 +165,6 @@ $(function () {
 
     $(function () {
       $("#display-movie").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
-      $('.loader').toggleClass('show');
         var queryURL = "http://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-01-29T03%3A00Z&api_key=xkhnkvkca2j54eavaxaarwhx"
         //  var apikey = ("xkhnkvkca2j54eavaxaarwhx") // ! << STORAGE ONLY -- NO NEED TO UNCOMMENT
         getQuote(); // ! <<  CALL getQuote FUNCTION
@@ -189,7 +188,6 @@ $(function () {
               // var programImage = $("<img>").attr("src", obj.program.preferredImage.uri);
          //     console.log(station);
         //      $("#movie-card-expanded").append(station);
-              $('.movie-loader').remove();
               $("#movie-card-expanded").append('<h6>Title:</h6> ', title);
               // $("#movie-card-expanded").append(programImage);
               $("#movie-card-expanded").append('<h6>GENRE:</h6> ', genre); // ! << UNCOMMENT & GENERATE/MATCH  #ID

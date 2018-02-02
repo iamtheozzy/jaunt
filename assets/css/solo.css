@@ -154,7 +154,7 @@ a:hover   {
 
 iframe {
     display: block;
-    width:100%;
+    width: 100%;
 }
 
 /* Resizes the images to be smaller and gives them a border */
@@ -166,11 +166,11 @@ iframe {
 }
 
 /* Loading animation that shows when the Spotify playlist is loading ===========*/
-.loader, .movie-loader, .food-loader  {
+.loader, .food-loader  {
 	display: none;
 }
 
-.loader.show, .movie-loader.show, .food-loader.show  {
+.loader.show, .food-loader.show  {
 	width: 100px;
 	height: 100px;
 	border-radius: 50%;
@@ -182,7 +182,7 @@ iframe {
 	align-items: center;
 }
 
-.inner-circle, .movie-inner-circle, .food-inner-circle {
+.inner-circle, .food-inner-circle {
 	width: 50%;
 	padding-bottom: 50%;
 	border-radius: 50%;
