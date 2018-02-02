@@ -21,81 +21,81 @@ function clearFoodCard() {
   $("#cuisine-input").empty();
 };
 // DOCUMENT READY
-$(function() {
+$(document).ready(function() {
 
 
 
-  $("#food-button").on("click", function () {
-  event.preventDefault();
-  /**
-   * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
-   **/
+  $("#food-button").on("click", function() {
+    event.preventDefault();
+    /**
+     * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
+     **/
 
-  jQuery.ajaxPrefilter(function(options) {
-    if (options.crossDomain && jQuery.support.cors) {
-      options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
-    }
-  });
-
-  /**
-   * ! AJAX PREFILTER  DO NOT CHANGE ------------------------------------------^
-   **/
-
-  // AJAX CALL
-
-  // creating variables of user inputs
-  var city = $("#city-input").val().trim().toLowerCase();
-  var cuisineChoise = $("#cuisine-input").val().trim().toLowerCase();
-  // use variables below when testing api functionality
-  // var city = "Chicago";
-  // var cuisineChoise = "mexican";
-
-  // holds API parameters to find the following= restaurants, open now, in user inut city and cuisine choice
-  var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&open_now=true&location="+ city + "&categories=" + cuisineChoise;
-
-  $.ajax({
-    type: "GET",
-    url: queryURL,
-    dataType: "json",
-    headers: {
-      "Authorization": "Bearer " +
-        "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
-    },
-    success: function(response) {
-      // returns 5 restaurants to the Food Card in index.html
-      for (var i = 0; i < 5; i++) {
-        var obj = response.businesses[i];
-        // console.log(obj); //returns restaurant object
-
-        // Creates clickable image that opens in yelp
-        var restImg = obj.image_url; //stores business image link.
-        //creates image tag and adds image url and class for styling.
-        var img = $("<img>").attr("src", restImg).attr("class", "rest-img");
-        // stores address
-        var address = $("<p class='text-white'>" + obj.location.display_address + "</p>");
-        //creates link that directs to restaurant yelp page
-        var imgLink = $("<br><a href=" + obj.url +"></a><br>").attr("target","_blank")
-
-        //adds restaurant name and adds it to link
-        var restName = $("<h5>");
-        restName.text(obj.name);
-
-        // This adds restaurant header, image, address and link to page
-        imgLink.append(restName);
-        imgLink.append(address);
-        imgLink.append(img);
-
-        $("#food-results").append(imgLink);
-        clearFoodCard();
+    jQuery.ajaxPrefilter(function(options) {
+      if (options.crossDomain && jQuery.support.cors) {
+        options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
       }
-    },
+    });
+
+    /**
+     * ! AJAX PREFILTER  DO NOT CHANGE ------------------------------------------^
+     **/
+
+    // AJAX CALL
+
+    // creating variables of user inputs
+    var city = $("#city-input").val().trim().toLowerCase();
+    var cuisineChoise = $("#cuisine-input").val().trim().toLowerCase();
+    // use variables below when testing api functionality
+    // var city = "Chicago";
+    // var cuisineChoise = "mexican";
+
+    // holds API parameters to find the following= restaurants, open now, in user inut city and cuisine choice
+    var queryURL = "https://api.yelp.com/v3/businesses/search?term=restaurant&open_now=true&location=" + city + "&categories=" + cuisineChoise;
+
+    $.ajax({
+      type: "GET",
+      url: queryURL,
+      dataType: "json",
+      headers: {
+        "Authorization": "Bearer " +
+          "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
+      },
+      success: function(response) {
+        // returns 5 restaurants to the Food Card in index.html
+        for (var i = 0; i < 5; i++) {
+          var obj = response.businesses[i];
+          console.log(obj); //returns restaurant object
+
+          // Creates clickable image that opens in yelp
+          var restImg = obj.image_url; //stores business image link.
+          //creates image tag and adds image url and class for styling.
+          var img = $("<img>").attr("src", restImg).attr("class", "rest-img");
+          // stores address
+          var address = $("<p class='text-white'>" + obj.location.display_address + "</p>");
+          //creates link that directs to restaurant yelp page
+          var imgLink = $("<br><a href=" + obj.url + "></a><br>").attr("target", "_blank")
+
+          //adds restaurant name and adds it to link
+          var restName = $("<h5>");
+          restName.text(obj.name);
+
+          // This adds restaurant header, image, address and link to page
+          imgLink.append(restName);
+          imgLink.append(address);
+          imgLink.append(img);
+
+          $("#food-results").append(imgLink);
+          clearFoodCard();
+        }
+      },
 
     })
   })
 
-  $("#reset-button").on("click", function () {
+  $("#reset-button").on("click", function() {
     $("#food-results").empty();
-  });
+});
 
 
 })
@@ -147,7 +147,6 @@ $(function () {
 //
 //===========================================================
 
-/*
 $(function () {
 //  $("#getQuote").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
         var queryURL = "http://ws.audioscrobbler.com/2.0/?method=tag.gettoptracks&tag=disco&api_key=9ece61cd5921f21d347c960c0218b3bd&format=json"
@@ -172,8 +171,6 @@ $(function () {
             })
         }
 })
-*/
-
 //================================================================================
 //
 //   ####    #####      ###     ####  #####  ##     ##   #####   ######  #####
@@ -184,7 +181,7 @@ $(function () {
 //
 //================================================================================
 
-  $(function () {
+    $(function () {
     //  $("#getQuote").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
             var queryURL = "http://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-01-30T00%3A30Z&imageSize=Sm&imageText=true&api_key=xkhnkvkca2j54eavaxaarwhx"
             //  var apikey = ("xkhnkvkca2j54eavaxaarwhx") // ! << STORAGE ONLY -- NO NEED TO UNCOMMENT

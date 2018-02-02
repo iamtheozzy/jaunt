@@ -29,10 +29,10 @@ $(function () {
           console.log(data);
           console.log(data._embedded.events[0].name);
           console.log(data._embedded.events[0].images[0].url);
-          console.log(data._embedded.events.length); // Number of events in array 
+          console.log(data._embedded.events.length); // Number of events in array
           // ! Debug
 
-          // For Loop 
+          // For Loop
           for (var i = 0; i < 8; i++) {
             var concertId = data._embedded.events[i];
             // console.log(obj);
@@ -152,13 +152,13 @@ $(function () {
       $("#bar-results").empty();
     });
     //====================================================
-    //                                                    
-    //  ###    ###   #####   ##   ##  ##  #####   ####  
-    //  ## #  # ##  ##   ##  ##   ##  ##  ##     ##     
-    //  ##  ##  ##  ##   ##  ##   ##  ##  #####   ###   
-    //  ##      ##  ##   ##   ## ##   ##  ##        ##  
-    //  ##      ##   #####     ###    ##  #####  ####   
-    //                                                    
+    //
+    //  ###    ###   #####   ##   ##  ##  #####   ####
+    //  ## #  # ##  ##   ##  ##   ##  ##  ##     ##
+    //  ##  ##  ##  ##   ##  ##   ##  ##  #####   ###
+    //  ##      ##  ##   ##   ## ##   ##  ##        ##
+    //  ##      ##   #####     ###    ##  #####  ####
+    //
     //====================================================
 
     $(function () {
@@ -171,14 +171,14 @@ $(function () {
           $.get(queryURL, function (data, status) {
             console.log(data);
         //  for (var i = 0; i < data.length; i++) { // ! << DEBUG
-            for (var i = 0; i < 10; i++) { 
+            for (var i = 0; i < 10; i++) {
               var obj = data[i];
               console.log(obj);
               var div = $("<div>");
               div.html(obj.program.title);
               $("#well-section").append(div);
 
-              // ! Added url =========================== 
+              // ! Added url ===========================
               var genre = $("<h6>").text(obj.program.genres);
               var programDetails = $("<h6>").text(obj.program.longDescription);
               var title = $("<h5>").text(obj.program.title);
