@@ -41,10 +41,6 @@ h5 {
 	font-size: 40px;
 }
 
-h5.movie {
-	color: black;
-}
-
 /* Font in the cards ============================================================*/
 p, label {
 	color: white;
@@ -64,14 +60,18 @@ a:hover   {
 /* Styling for the cards */
 
 /* Food Card =================================================================*/
+h4.food {
+	color: #F3E5F5;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+p.food {
+	color: #F3E5F5;
+}
+
 #food-card {
 	background-color: #673AB7;
 	margin-bottom: 50px;
-}
-
-#food-card:hover {
-	cursor: pointer;
-	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
 }
 
 #food-card-expanded {
@@ -79,32 +79,28 @@ a:hover   {
 	border: 0px;
 }
 
+#food-card:hover {
+	cursor: pointer;
+	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+
 /* This is the city and cuisine input boxes */
 #cuisine-input, #city-input {
+	font-family: 'Alegreya Sans SC', sans-serif;
 	width: 100%;
 	border-radius: 5px;
 	border-width: 2px;
-	font-family: 'Alegreya Sans SC', sans-serif;
 	margin-bottom: 5px;
 }
 
-/* This is the submit button */
+/* This is the submit and reset buttons */
 #food-button, #reset-button {
+	font-family: 'Alegreya Sans SC', sans-serif;
 	background-color: #F3E5F5;
 	color: #9C27B0;
-	font-family: 'Alegreya Sans SC', sans-serif;
 	border-width: 2px;
 	border-radius: 5px;
 	border-color: white;
-}
-
-p.food {
-	color: #F3E5F5;
-}
-
-h4.food {
-	color: #F3E5F5;
-	font-family: 'Alegreya Sans SC', sans-serif;
 }
 
 /* Movie Card ===============================================================*/
@@ -128,16 +124,15 @@ h4.food {
 }
 
 /* Spotify Card ===============================================================*/
+p.music {
+	color: #FCE4EC;
+}
+
 #music-card {
 	background-color: #E91E63;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	width: 45%
-}
-
-#music-card:hover {
-	cursor: pointer;
-	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
 }
 
 #music-card-expanded {
@@ -146,27 +141,28 @@ h4.food {
 	border: 0px;
 }
 
+#music-card:hover {
+	cursor: pointer;
+	box-shadow: 0 4px 8px 0 gray, 0 6px 20px 0 gray;
+}
+
 /* This is the category input box */
 #music-input {
+	font-family: 'Alegreya Sans SC', sans-serif;
 	width: 90%;
 	border-radius: 5px;
 	border-width: 2px;
-	font-family: 'Alegreya Sans SC', sans-serif;
 	margin-bottom: 15px;
 }
 
 /* This is the create button */
 #music-button {
+	font-family: 'Alegreya Sans SC', sans-serif;
 	background-color: #FCE4EC;
 	color: #E91E63;
-	font-family: 'Alegreya Sans SC', sans-serif;
 	border-width: 2px;
 	border-radius: 5px;
 	border-color: white;
-}
-
-p.music {
-	color: #FCE4EC;
 }
 
 /* Spotify iframe, make it so the size adjust with the div/window and doesnt pop out */

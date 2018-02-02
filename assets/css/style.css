@@ -80,16 +80,6 @@ a:hover {
 	border-radius: 0px;
 }
 
-/* Random Card =================================================================*/
-#random-card {
-	background-color: black;
-	text-align: center;
-	color: white;
-	height: 100px;
-	border: 0px;
-	border-radius: 0px;
-}
-
 /* Removing padding from rows and columns ======================================*/
 .col {
 	padding: 0px;

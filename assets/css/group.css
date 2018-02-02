@@ -61,6 +61,15 @@ a:hover {
 /* Styling for the cards */
 
 /* Food Card =================================================================*/
+h4.food {
+	color: #F3E5F5;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+p.food {
+	color: #F3E5F5;
+}
+
 #food-card {
 	background-color: #673AB7;
 	color: white;
@@ -68,13 +77,14 @@ a:hover {
 	border-radius: 0px;
 }
 
-#food-card:hover {
-	cursor: pointer;
-}
-
 #food-card-expanded {
 	background-color: #673AB7;
 	border: 0px;
+}
+
+/* Makes the cursor a pointer so user knows to click the card */
+#food-card:hover {
+	cursor: pointer;
 }
 
 /* This is the city and cuisine input boxes */
@@ -86,7 +96,7 @@ a:hover {
 	margin-bottom: 5px;
 }
 
-/* This is the submit button */
+/* This is the submit and reset buttons */
 #bar-button, #barReset-button {
 	background-color: #F3E5F5;
 	color: #9C27B0;
@@ -96,26 +106,22 @@ a:hover {
 	border-color: white;
 }
 
-p.food {
-	color: #F3E5F5;
-}
-
-h4.food {
-	color: #F3E5F5;
+/* Concert Card ===============================================================*/
+h4.concert {
+	color: #E3F2FD;
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
 
-/* Concert Card ===============================================================*/
+p.concert {
+	color: #E3F2FD;
+}
+
 #concert-card {
 	background-color: #03A9F4;
-	text-align: right;
 	color: white;
 	border: 0px;
 	border-radius: 0px;
-}
-
-#concert-card:hover {
-	cursor: pointer;
+	text-align: right;
 }
 
 #concert-card-expanded {
@@ -123,36 +129,36 @@ h4.food {
 	border: 0px;
 }
 
+/* Makes the cursor a pointer so user knows to click the card */
+#concert-card:hover {
+	cursor: pointer;
+}
+
 /* This is the location input box */
 #location-input {
+	font-family: 'Alegreya Sans SC', sans-serif;
 	width: 100%;
 	border-radius: 5px;
 	border-width: 2px;
-	font-family: 'Alegreya Sans SC', sans-serif;
 	margin-bottom: 5px;
 }
 
 /* This is the submit and reset buttons */
 #concert-button, #reset-button{
 	background-color: #E3F2FD;
-	color: #2196F3;
 	font-family: 'Alegreya Sans SC', sans-serif;
+	color: #2196F3;
 	border-width: 2px;
 	border-radius: 5px;
 	border-color: white;
 	margin-bottom: 25px;
 }
 
-p.concert {
-	color: #E3F2FD;
-}
-
-h4.concert {
-	color: #E3F2FD;
-	font-family: 'Alegreya Sans SC', sans-serif;
-}
-
 /* Spotify Card ===============================================================*/
+p.music {
+	color: #FCE4EC;
+}
+
 #music-card {
 	background-color: #E91E63;
 	color: white;
@@ -160,14 +166,14 @@ h4.concert {
 	border-radius: 0px;
 }
 
-/* Makes the cursor a pointer so user knows to click the card */
-#music-card:hover {
-	cursor: pointer;
-}
-
 #music-card-expanded {
 	background-color: #E91E63;
 	border: 0px;
+}
+
+/* Makes the cursor a pointer so user knows to click the card */
+#music-card:hover {
+	cursor: pointer;
 }
 
 /* This is the category input box */
@@ -189,14 +195,6 @@ h4.concert {
 	border-color: white;
 }
 
-p.music {
-	color: #FCE4EC;
-}
-
-h4.music {
-
-}
-
 /* Spotify iframe, make it so the size adjust with the div/window and doesnt pop out */
 iframe {
     display: block;
@@ -213,7 +211,7 @@ iframe {
 	margin: 0px;
 }
 
-/* Resizes the images to be smaller and gives them a border */
+/* Resizes images to be smaller and gives them a border */
 .rest-img, img {
 	width: 40%;
 	border-width: 5px;
