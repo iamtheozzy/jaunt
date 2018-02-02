@@ -10,56 +10,58 @@
 
 $(function () {
 
-$(function () {
+  $(function () {
 
-      $("#concert-button").on("click", function () {
-        event.preventDefault();
-        var city = $("#location-input").val();
-        //  var city = "Chicago" // ! << Uncomment to hardcode city
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-03T00:00:00Z&keyword=music&city=";
+    $("#concert-button").on("click", function () {
+      event.preventDefault();
+      var city = $("#location-input").val();
+      //  var city = "Chicago" // ! << Uncomment to hardcode city
+      var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-03T00:00:00Z&keyword=music&city=";
 
-        // Call function
-        getQuote();
+      // Call function
+      getQuote();
 
-        // AJAX call ----
-        function getQuote() {
-          $.get(queryURL + city + "&apikey=RAJIFQErgEgMNdIAtVrRj7Z6bAWPY0cl", function (data, status) {
+      // AJAX call ----
+      function getQuote() {
+        $.get(queryURL + city + "&apikey=RAJIFQErgEgMNdIAtVrRj7Z6bAWPY0cl", function (data, status) {
 
+          // ! Debug
+          console.log(data);
+          console.log(data._embedded.events[0].name);
+          console.log(data._embedded.events[0].images[0].url);
+          console.log(data._embedded.events.length); // Number of events in array 
+          // ! Debug
+
+          // For Loop 
+          for (var i = 0; i < 8; i++) {
+            var concertId = data._embedded.events[i];
+            // console.log(obj);
+            // console.log(obj.dates.start.localDate);
             // ! Debug
-            console.log(data);
-            console.log(data._embedded.events[0].name);
-            console.log(data._embedded.events[0].images[0].url);
-            console.log(data._embedded.events.length); // Number of events in array 
-            // ! Debug
+            //    var div = $("<div>"); // Create a div
+            //    div.html(obj);
+            //    console.log(obj);
+            //    $("#concert-results").append(div);
+            // ! debug
 
-            // For Loop 
-            for (var i = 0; i < 8; i++) {
-              var concertId = data._embedded.events[i];
-              // console.log(obj);
-              // console.log(obj.dates.start.localDate);
-              // ! Debug
-              //    var div = $("<div>"); // Create a div
-              //    div.html(obj);
-              //    console.log(obj);
-              //    $("#concert-results").append(div);
-              // ! debug
+            // Variables
+            var artistName = $("<h6>").text(concertId.name);
+            var artistImage = $("<img>").attr("src", concertId.images[0].url);
+            var artistURL = $("<a>").attr("href", concertId.url).attr("target", "_blank").append(artistName);
+            var venue = $("<h6>").text(concertId._embedded.venues[0].name);
+            var date_start = $("<h6>").text(concertId.dates.start.localDate);
+            //var artistImage = obj.images[i].url;
 
-              // Variables
-              var artistName = $("<h5>").text(concertId.name);
-              var artistImage = $("<img>").attr("src", concertId.images[0].url);
-              var artistURL = $("<a>").attr("href", concertId.url).attr("target", "_blank").append(artistName);
-              var venue = $("<p>").text(concertId._embedded.venues[0].name);
-              //var artistImage = obj.images[i].url;
-
-              // Results appended to document
-              $("#concert-results").append(artistImage);
-              $("#concert-results").append(artistURL);
-              $("#concert-results").append(venue);
-              // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
-            }
-          })
-        }
-      })
+            // Results appended to document
+            $("#concert-results").append(date_start);
+            $("#concert-results").append(artistImage);
+            $("#concert-results").append(artistURL);
+            $("#concert-results").append(venue);
+            // ! Copy and paste url & add a city in the search to see a test example: ("file:///C:/Users/Dan/Documents/Northwestern/bandify/index.html")
+          }
+        })
+      }
+    })
     //=======================================================================================
     //
     //  ##    ##  #####  ##      #####          ####    #####     #####   ##   ##  #####
@@ -76,13 +78,13 @@ $(function () {
     };
 
     //Yelp Search button click binding
-    $("#bar-button").on("click", function() {
+    $("#bar-button").on("click", function () {
       event.preventDefault();
       /**
        * ! AJAX PREFILTER -- DO NOT CHANGE ----------------------------------------v
        **/
 
-      jQuery.ajaxPrefilter(function(options) {
+      jQuery.ajaxPrefilter(function (options) {
         if (options.crossDomain && jQuery.support.cors) {
           options.url = 'https://cors-anywhere.herokuapp.com/' + options.url;
         }
@@ -112,7 +114,7 @@ $(function () {
           "Authorization": "Bearer " +
             "3uLaVQrJwP21kaJjuErLNk5QE9TTtwtFA7LErPkhI32wZg6PYKUll05F-9_fkoK45CnUZ6qyVOXkvHGjRK-9ajm-CtR9J3r7d5zMfcl72IUJbtLy8yUpSZ-uHlpmWnYx"
         },
-        success: function(response) {
+        success: function (response) {
           // returns 5 restaurants to the Food Card in index.html
           for (var i = 0; i < 5; i++) {
             var obj = response.businesses[i];
@@ -149,6 +151,49 @@ $(function () {
     $("#barReset-button").on("click", function () {
       $("#bar-results").empty();
     });
+    //====================================================
+    //                                                    
+    //  ###    ###   #####   ##   ##  ##  #####   ####  
+    //  ## #  # ##  ##   ##  ##   ##  ##  ##     ##     
+    //  ##  ##  ##  ##   ##  ##   ##  ##  #####   ###   
+    //  ##      ##  ##   ##   ## ##   ##  ##        ##  
+    //  ##      ##   #####     ###    ##  #####  ####   
+    //                                                    
+    //====================================================
+
+    $(function () {
+      $("#display-movie").on("click", function () { // ! << UNCOMMENT & GENERATE/MATCH BUTTON #ID
+        var queryURL = "http://data.tmsapi.com/v1.1/movies/airings?lineupId=USA-TX42500-X&startDateTime=2018-01-29T03%3A00Z&api_key=xkhnkvkca2j54eavaxaarwhx"
+        //  var apikey = ("xkhnkvkca2j54eavaxaarwhx") // ! << STORAGE ONLY -- NO NEED TO UNCOMMENT
+        getQuote(); // ! <<  CALL getQuote FUNCTION
+        // AJAX call ----------------------------------------
+        function getQuote() {
+          $.get(queryURL, function (data, status) {
+            console.log(data);
+        //  for (var i = 0; i < data.length; i++) { // ! << DEBUG
+            for (var i = 0; i < 10; i++) { 
+              var obj = data[i];
+              console.log(obj);
+              var div = $("<div>");
+              div.html(obj.program.title);
+              $("#well-section").append(div);
+
+              // ! Added url =========================== 
+              var genre = $("<h6>").text(obj.program.genres);
+              var programDetails = $("<h6>").text(obj.program.longDescription);
+              var title = $("<h5>").text(obj.program.title);
+         //     console.log(station);
+        //      $("#movie-card-expanded").append(station);
+              $("#movie-card-expanded").append('<h6>Title:</h6> ', title);
+              $("#movie-card-expanded").append('<h6>GENRE:</h6> ', genre); // ! << UNCOMMENT & GENERATE/MATCH  #ID
+              $("#movie-card-expanded").append('DESCRIPTION: ', programDetails); // ! << UNCOMMENT & GENERATE/MATCH  #ID
+              $("#movie-card-expanded").append("<hr>");
+              // "http://developer.tmsapi.com/io-docs" API Developer Info.
+            }
+          })
+        }
+      })
+    })
 
 
 
@@ -179,7 +224,6 @@ $(function () {
 
 
 
-
-}); 
+  });
 })
 //End of Page Ready Function
