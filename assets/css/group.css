@@ -144,7 +144,7 @@ p.concert {
 }
 
 /* This is the submit and reset buttons */
-#concert-button, #reset-button{
+#concert-button, #resetConcert-button{
 	background-color: #E3F2FD;
 	font-family: 'Alegreya Sans SC', sans-serif;
 	color: #2196F3;

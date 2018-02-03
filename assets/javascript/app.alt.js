@@ -62,6 +62,11 @@ $(function () {
         })
       }
     })
+    // reset button for concert card
+    $("#resetConcert-button").on("click", function() {
+      $("#concert-results").empty();
+      $("#location-input").empty();
+    })
     //=======================================================================================
     //
     //  ##    ##  #####  ##      #####          ####    #####     #####   ##   ##  #####
@@ -138,7 +143,7 @@ $(function () {
             imgLink.append(restName);
             imgLink.append(address);
             imgLink.append(img);
-            
+
             $('.bar-loader').toggleClass('show');
             $("#bar-results").append(imgLink);
             clearBarCard(); //resets user input fields
