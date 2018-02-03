@@ -16,7 +16,7 @@ $(function () {
       event.preventDefault();
       var city = $("#location-input").val();
       //  var city = "Chicago" // ! << Uncomment to hardcode city
-      var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-03T00:00:00Z&keyword=music&city=";
+      var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?&endDateTime=2018-02-05T00:00:00Z&keyword=music&city=";
 
       // Call function
       getQuote();
