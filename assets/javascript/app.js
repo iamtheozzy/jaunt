@@ -78,7 +78,7 @@ $(document).ready(function() {
           var imgLink = $("<br><a href=" + obj.url + "></a><br>").attr("target", "_blank")
 
           //adds restaurant name and adds it to link
-          var restName = $("<h4 class='food'>");
+          var restName = $("<h5 class='food'>");
           restName.text(obj.name);
 
           // This adds restaurant header, image, address and link to page

@@ -60,7 +60,7 @@ a:hover   {
 /* Styling for the cards */
 
 /* Food Card =================================================================*/
-h4.food {
+h5.food {
 	color: #F3E5F5;
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
@@ -104,6 +104,15 @@ p.food {
 }
 
 /* Movie Card ===============================================================*/
+h5.movies {
+	color: #E1F5FE;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+p.movies {
+	color: #E1F5FE;
+}
+
 #movie-card {
 	background-color: #03A9F4;
 	text-align: right;

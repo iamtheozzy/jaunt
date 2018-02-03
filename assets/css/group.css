@@ -61,7 +61,7 @@ a:hover {
 /* Styling for the cards */
 
 /* Food Card =================================================================*/
-h4.food {
+h5.food {
 	color: #F3E5F5;
 	font-family: 'Alegreya Sans SC', sans-serif;
 }
@@ -107,7 +107,7 @@ p.food {
 }
 
 /* Concert Card ===============================================================*/
-h4.concert {
+h5.concert {
 	color: #E3F2FD;
 	font-family: 'Alegreya Sans SC', sans-serif;
 }

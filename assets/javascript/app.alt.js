@@ -45,7 +45,7 @@ $(function () {
             // ! debug
 
             // Variables
-            var artistName = $("<h4 class='concert'>").text(concertId.name);
+            var artistName = $("<h5 class='concert'>").text(concertId.name);
             var artistImage = $("<img>").attr("src", concertId.images[0].url);
             var artistURL = $("<a>").attr("href", concertId.url).attr("target", "_blank").append(artistName);
             var venue = $("<p class='concert'>").text(concertId._embedded.venues[0].name);
@@ -131,7 +131,7 @@ $(function () {
             var imgLink = $("<br><a href=" + obj.url + "></a><br>").attr("target", "_blank");
 
             //adds restaurant name and adds it to link
-            var restName = $("<h4 class='food'>");
+            var restName = $("<h5 class='food'>");
             restName.text(obj.name);
 
             // This adds restaurant header, image, address and link to page
@@ -182,9 +182,9 @@ $(function () {
               console.log(obj.program);
 
               // ! Added url ===========================
-              var genre = $("<p>").text(obj.program.genres);
-              var programDetails = $("<p>").text(obj.program.longDescription);
-              var title = $("<p>").text(obj.program.title);
+              var genre = $("<p class ='movies'>").text(obj.program.genres);
+              var programDetails = $("<p class ='movies'>").text(obj.program.longDescription);
+              var title = $("<h5 class ='movies'>").text(obj.program.title);
               // var programImage = $("<img>").attr("src", obj.program.preferredImage.uri);
          //     console.log(station);
         //      $("#movie-card-expanded").append(station);
