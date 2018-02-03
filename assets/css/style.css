@@ -24,6 +24,12 @@ body {
 	background-size: 70%;
 }
 
+/* Text below the h1 in the jumbotron ==========================================*/
+.lead {
+	color: white;
+	font-family: 'Alegreya Sans SC', sans-serif;
+}
+
 /* Various font styling */
 
 /* Main header within the jumbotron ============================================*/
@@ -42,12 +48,6 @@ h5 {
 /* Font in the cards ============================================================*/
 p, {
 	font-family: 'Alegreya Sans SC', sans-serif;
-}
-
-
-/* Text below the h1 in the jumbotron ==========================================*/
-.lead {
-	color: white;
 }
 
 /* Turns of text decorations when hovering over the cards to click ============*/
